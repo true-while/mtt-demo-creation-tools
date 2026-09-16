@@ -1,10 +1,12 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
+import path from "node:path";
 import test from "node:test";
+import { unzipSync } from "fflate";
 import { PNG } from "pngjs";
 import { parseDocument } from "yaml";
 import { releasePolicy } from "./publish-release.mjs";
-import { assemblePackages, createIcon, createZip, frontmatter, parseTag, skillNames, validatePath, validateSkills } from "./release-packages.mjs";
+import { assemblePackages, createIcon, createZip, frontmatter, parseTag, root, skillNames, validatePath, validateSkills } from "./release-packages.mjs";
 
 const skill = Buffer.from("---\nname: example\ndescription: Test skill.\nmetadata:\n  version: '1.0.0'\n---\n\n# Example\n");
 
@@ -94,6 +96,51 @@ test("icons have the required dimensions and white transparent outline", () => {
     }
   }
   assert.ok(visible > 0 && transparent > 0);
+});
+
+test("Cowork ZIP includes every runtime reference with source content and excludes them from Scout", async () => {
+  const { cowork, scout } = await assemblePackages("v1.0.0");
+  const archive = unzipSync(createZip(cowork));
+  const referenceRoot = path.join(root, "cowork/references");
+  const entries = await readdir(referenceRoot, { recursive: true, withFileTypes: true });
+  const references = entries.filter((entry) => entry.isFile()).map((entry) =>
+    path.relative(referenceRoot, path.join(entry.parentPath, entry.name)).split(path.sep).join("/")
+  ).sort();
+  for (const required of ["PRESENTER-GUIDE.md", "QUALITY-STANDARDS.md", "TECHNOLOGY-GUIDANCE.md"]) {
+    assert.ok(references.includes(required), `Missing required source reference: ${required}`);
+  }
+  const prefix = "skills/demo-on-demand/references/";
+  assert.deepEqual(Object.keys(archive).filter((filePath) => filePath.startsWith(prefix)).sort(), references.map((filePath) => `${prefix}${filePath}`));
+  for (const reference of references) {
+    const source = await readFile(path.join(referenceRoot, reference));
+    const expected = /\.(md|csv|json|txt)$/i.test(reference)
+      ? Buffer.from(source.toString("utf8").replace(/\r\n/g, "\n"))
+      : source;
+    assert.ok(expected.length > 0, `Empty reference: ${reference}`);
+    assert.deepEqual(Buffer.from(archive[`${prefix}${reference}`]), expected, reference);
+  }
+  assert.ok(!Object.keys(scout).some((filePath) => filePath.includes("/references/")));
+});
+
+test("release guides keep Cowork verification separate from Scout installation", async () => {
+  const { cowork, scout } = await assemblePackages("v1.0.0");
+  const guide = (await readFile(path.join(root, "plugins/INSTALL.md"), "utf8")).replace(/\r\n/g, "\n");
+  for (const files of [cowork, scout]) {
+    const archive = unzipSync(createZip(files));
+    assert.equal(Buffer.from(archive["INSTALL.md"]).toString("utf8"), guide);
+  }
+  const website = await readFile(path.join(root, "docs/index.html"), "utf8");
+  const readme = await readFile(path.join(root, "README.md"), "utf8");
+  const verification = guide.match(/```text\n(Verify my installed demo tools[\s\S]*?)\n```/)?.[1];
+  assert.ok(verification, "Bundled guide must include the Cowork verification prompt");
+  const normalize = (text) => text?.replace(/\s+/g, " ").trim();
+  assert.equal(normalize(website.match(/<pre id="cowork-prompt">([\s\S]*?)<\/pre>/)?.[1]), normalize(verification));
+  assert.equal(normalize(readme.match(/```text\r?\n(Verify my installed demo tools[\s\S]*?)\r?\n```/)?.[1]), normalize(verification));
+  for (const text of [guide, readme]) assert.match(text, /Cowork > Customize > Plugins > Add plugin/);
+  assert.match(website, /Cowork &gt; Customize &gt; Plugins &gt; Add plugin/);
+  assert.match(website, /aria-label="Copy Cowork verification prompt"/);
+  for (const text of [guide, readme, website]) assert.doesNotMatch(text, /Download and install this release for my personal use in Cowork/);
+  for (const text of [readme, website]) assert.match(text, /Download and install this release for my personal use in Scout/);
 });
 
 test("repository packages contain complete, isolated runtime skills without mutable sources", async () => {

@@ -4,7 +4,8 @@ Public skill repository for MTT demo-on-demand tooling used by Scout and Cowork.
 
 ## Install a release
 
-Starting with **v0.1.0**, install the complete package for your environment from
+Trainers can use either **Cowork or Scout**. Choose the product you prefer.
+Install the complete package for your chosen product from
 [GitHub Releases](https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases).
 Each ZIP includes demo-on-demand, generate-data with both approved CSVs, shared style guidance,
 LICENSE, and INSTALL.md. Cowork additionally includes its references and an M365 plugin manifest.
@@ -13,11 +14,11 @@ LICENSE, and INSTALL.md. Cowork additionally includes its references and an M365
 - [Scout skills ZIP](https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/scout-skills.zip)
 - [Checksums](https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/SHA256SUMS.txt)
 
-Use the prompts below or attach the downloaded ZIP. Installation support must be tested in your
-environment; a download or temporary extraction is not a persistent installation. Cowork targets
-personal sideloading only, subject to tenant policy. See [personal installation](plugins/INSTALL.md)
-for the Agents Toolkit fallback and [the deployment strategy](docs/deployment.md) for release,
-migration, and acceptance-test details. Stable download links work after the first release is published.
+**Cowork:** download the ZIP in your browser and install through **Customize > Plugins > Add plugin**
+using the steps below. **Scout:** use the installation prompt below, or attach the downloaded Scout
+ZIP and use that prompt. A download or temporary extraction is not a persistent installation.
+See [personal installation](plugins/INSTALL.md) for requirements and the advanced Cowork fallback,
+and [the deployment guide](docs/deployment.md) for release and acceptance-test details.
 
 ## Prompt: install everything for Scout
 
@@ -34,21 +35,32 @@ Verify discovery in a new conversation if possible; otherwise mark it unverified
 If installation is blocked, explain the limitation rather than claiming success.
 ```
 
-## Prompt: install everything for Cowork
+## Install in Cowork
+
+1. Download the [Cowork plugin ZIP](https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/cowork-plugin.zip)
+    in your browser. Keep it zipped; do not use the Scout ZIP or GitHub's source-code archive.
+2. Open **Cowork > Customize > Plugins > Add plugin**.
+3. In **Add a plugin**, select **choose a file** and select the downloaded ZIP, or drag and drop
+    the ZIP into the dialog. Follow the on-screen installation and consent steps.
+4. Confirm the plugin appears in the installed plugins list.
+5. Start a new Cowork conversation and paste the verification prompt below.
+
+Cowork's chat workspace may not have download access. Attaching the ZIP to chat does not establish
+plugin registration or persistence. Tenant policy must permit installation; see
+[advanced personal installation guidance](plugins/INSTALL.md#advanced-personal-installation)
+for personal sideloading and policy requirements. Do not delete existing skills before the replacement package
+is available and validated; confirm any required removal and recovery plan before proceeding.
+
+### Cowork verification prompt
 
 ```text
-Download and install this release for my personal use in Cowork:
-https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/cowork-plugin.zip
-
-Follow INSTALL.md. Use personal plugin installation if supported; otherwise install all three
-skill folders under skills/: demo-on-demand with references/, generate-data with both CSVs,
-and demo-builder-style-guidelines. Ask before replacing existing skills or local edits.
-Preserve companions and do not fetch replacement files from main. Report the release,
-installed names, versions, and locations. Verify both CSVs and all three references are readable.
-State whether you registered the M365 plugin or installed only skill folders.
-Verify discovery in a new conversation if possible; otherwise mark it unverified.
-If blocked, explain the limitation and give the personal sideloading fallback from INSTALL.md.
-Do not deploy to my tenant or claim success after only downloading or extracting the ZIP.
+Verify my installed demo tools without downloading, installing, deleting, or replacing anything.
+Check discovery of demo-on-demand, generate-data, and demo-builder-style-guidelines.
+Read companies.csv and names.csv through the installed generate-data skill, and open the installed
+demo builder's PRESENTER-GUIDE.md, QUALITY-STANDARDS.md, and TECHNOLOGY-GUIDANCE.md references.
+Check that the shared style guidance is readable. Report the skill versions and host-provided
+locations where available. Mark anything you cannot inspect as unverified; do not invent paths
+or infer plugin registration from files attached to this conversation.
 ```
 
 ## Example Prompt
@@ -101,7 +113,7 @@ flowchart TD
 
 ## How versioning works
 
-The distribution version starts at **v0.1.0**. A pushed `vMAJOR.MINOR.PATCH` tag builds and publishes
+A pushed `vMAJOR.MINOR.PATCH` tag builds and publishes
 both ZIPs from that commit. The Cowork manifest uses the numeric version without `v` and keeps a
 stable app ID. Each skill retains its independent `metadata.version`:
 

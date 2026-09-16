@@ -2,14 +2,24 @@
 
 ## Decision
 
-Starting with **v0.1.0**, release-tagged packages are the primary installation channel. GitHub
+Release-tagged packages are the installation channel. GitHub
 **Releases**, not the GitHub Packages registry or expiring Actions artifacts, hosts the downloadable
-ZIPs. Cowork targets personal sideloading only. The primary user experience remains a copyable
-installation prompt in Cowork or Scout; host support and persistence require user testing.
+ZIPs. Trainers choose either Cowork or Scout; neither product requires the other.
+
+- **Cowork:** browser download, then **Cowork > Customize > Plugins > Add plugin**. In **Add a plugin**,
+	select **choose a file** and select cowork-plugin.zip, or drag and drop the ZIP into the dialog.
+	Complete the on-screen installation and consent steps. Confirm the installed plugin, then verify
+	its skills in a new conversation. See [advanced personal installation](../plugins/INSTALL.md#advanced-personal-installation)
+	for personal sideloading and policy requirements.
+	Tenant policy applies to both UI and CLI installation. Chat download or extraction is not installation.
+- **Scout:** use the website installation prompt, or attach scout-skills.zip and use the same prompt
+	to install all skill folders into the configured personal skills location.
+
+Host support, persistence, and activation require testing in the chosen product.
 
 The website continues publishing directly from main/docs without a build step. Stable
 `releases/latest/download/cowork-plugin.zip` and `releases/latest/download/scout-skills.zip` links
-eliminate per-release HTML edits. They return 404 until the first release is published. Version-pinned
+eliminate per-release HTML edits. Version-pinned
 downloads use `releases/download/v0.1.0/<asset-name>` instead.
 
 ## Package contract
@@ -27,9 +37,10 @@ icons are needed. Both archives contain:
 - generate-data, including SKILL.md, companies.csv, and names.csv.
 - demo-builder-style-guidelines.
 
-Cowork also bundles every file in cowork/references beside its runtime skill. Skill names stay
-unchanged; a -plugin suffix is not required. The older prompts in plugins/ are historical authoring
-examples, not release build inputs. Creator-maintenance and edit-guardrail skills are excluded.
+Cowork also bundles every file in cowork/references beside its runtime skill. A -plugin suffix is not
+required for skill names. The prompts in plugins/ are authoring examples, not release build inputs.
+Creator-maintenance and edit-guardrail skills are excluded. The packager copies plugins/INSTALL.md
+into both ZIPs; edit that source guide to update bundled installation instructions.
 
 Runtime instructions load their bundled dependencies using host-provided locations, without update
 checks or downloads from main. Data validation, approval controls, and product-specific demo
@@ -58,7 +69,7 @@ The build never regenerates skill content using an AI model.
 Pull requests and pushes to main run tests and build candidate artifacts. A manual workflow run
 accepts a version but **never publishes**. Pushing a v* tag runs the same validation, then publishes
 only when the tag is exactly vMAJOR.MINOR.PATCH with no leading zeros, prerelease suffix, or build
-suffix. Prerelease tags are intentionally rejected in this first strategy.
+suffix. Prerelease tags are rejected.
 
 Release tags must point to a commit reachable from main. Configure a GitHub tag ruleset restricting
 v* creation to release maintainers and preventing tag updates/deletions. No custom PAT is needed:
@@ -70,7 +81,8 @@ The publisher creates or resumes a draft, uploads all four assets, checks asset 
 never overwritten; fixes require a new tag. Publication is serialized, and older backfill versions
 are not marked latest. Protect tags rather than moving a tag to repair a release.
 
-Commit and push the workflow and all package sources to main before pushing the first tag:
+Commit and push the workflow and all package sources to main before pushing a new release tag.
+For example, for an unused version:
 
 ```text
 git tag -a v0.1.0 -m "MTT Demo Creation Tools v0.1.0"
@@ -83,27 +95,34 @@ builds, which is another reason not to rewrite HTML during releases.
 
 ## Personal acceptance test
 
-The user performs these checks in each real environment after receiving the packages:
+Maintainers test both products before recommending a release. Trainers verify the product they choose:
 
-1. Paste the website install prompt, or attach the ZIP and ask to install all included skills.
+1. In Cowork, download in the browser and open Add plugin. Select **choose a file** and select the ZIP,
+	or drag and drop it into the dialog. Complete installation and record any policy blocks.
+	In Scout, use the website install prompt or attach its ZIP.
 2. Verify persistent installation, not just download, extraction, or reading SKILL.md into context.
-3. Record the release, installed skill names/versions, locations, and replacement confirmations.
+3. Record the downloaded release, installed skill names/versions, available host-provided locations,
+	and replacement confirmations. Mark anything the host does not expose as unverified.
 4. Verify both CSVs and shared style guidance are accessible. In Cowork, open all three references.
 5. In a new conversation, verify discovery and activation of demo-on-demand and its dependencies.
 6. Run the bakery example; confirm data compliance, presenter quality, and expected artifacts.
 7. Confirm Scout asks the GitHub branch question and Cowork remains folder-native.
-8. In Cowork, record whether the M365 plugin was registered or only skill folders were installed.
-9. If chat cannot register the plugin, follow the personal fallback in [INSTALL.md](../plugins/INSTALL.md).
+8. In Cowork, confirm the plugin appears installed in the UI. Chat access to attached files or loose
+	skill folders is not evidence of plugin registration.
+9. Use the Cowork verification prompt in [INSTALL.md](../plugins/INSTALL.md) without attaching the ZIP
+	to that new conversation, so installed resources are tested rather than temporary extracted files.
 10. Test an upgrade with a higher package version, preserving the app ID and unrelated skills.
 
-Do not claim chat installation, tenant permission, or upgrade behavior is verified by CI. If the
-host cannot install from a URL, download and attach the matching ZIP. Personal sideloading requires
-tenant permission. Tenant-admin deployment and public store submission are out of scope.
+Do not claim host installation, tenant permission, or upgrade behavior is verified by CI. In Scout,
+if URL installation is unavailable, download and attach the Scout ZIP. For Cowork, use browser
+download and the plugin interface or the documented personal CLI fallback. Tenant-admin deployment
+and public store submission are out of scope.
 
-## Migration
+## Updates
 
-Users with older loose-file installations must confirm replacements, including shared dependencies,
-and avoid leaving duplicate skill registrations. Do not silently remove old skills. Maintainers may
+Confirm replacements, including shared dependencies, and avoid duplicate skill registrations. For
+Cowork, keep existing skills until the replacement ZIP is available and validated. If the host requires
+removal first, confirm a backup and recovery plan before proceeding. Do not silently remove skills. Maintainers may
 still inspect raw source files for development, but end-user install instructions must point to
 released packages. When editing runtime skills, follow the shared edit guardrails and update each
 changed skill's metadata version and changelog. Keep distribution policy in this guide, not runtime

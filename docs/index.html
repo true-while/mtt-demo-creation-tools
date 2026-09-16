@@ -358,32 +358,35 @@
       <div class="container">
         <div class="section-heading">
           <h2>Install and start building</h2>
-          <p>Paste the matching prompt into Cowork or Scout to install the latest release for your personal use. Each ZIP includes the demo builder, approved data lists, and shared style guidance.</p>
+          <p>Trainers can use either Cowork or Scout. Choose the product you prefer; you do not need both. Each ZIP includes the demo builder, approved data lists, and shared style guidance for personal use.</p>
         </div>
         <div class="install-grid">
           <article class="install-panel">
             <h3>Cowork</h3>
-            <p><a href="https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/cowork-plugin.zip">Download Cowork plugin</a> for personal installation. Tenant policy must allow sideloading.</p>
+            <p><a href="https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/cowork-plugin.zip">Download Cowork plugin</a> in your browser. Keep the ZIP intact; do not use the Scout ZIP or GitHub's source-code archive.</p>
+            <ol>
+              <li>Open <strong>Cowork &gt; Customize &gt; Plugins &gt; Add plugin</strong>.</li>
+              <li>In <strong>Add a plugin</strong>, select <strong>choose a file</strong> and select the downloaded ZIP, or drag and drop the ZIP into the dialog. Follow the on-screen installation and consent steps.</li>
+              <li>Confirm the plugin appears in the installed plugins list.</li>
+              <li>Start a new Cowork conversation and paste the verification prompt below.</li>
+            </ol>
+            <p class="source-note">Tenant policy must permit installation. See <a href="https://github.com/rob-foulkrod/mtt-demo-creation-tools/blob/main/plugins/INSTALL.md#advanced-personal-installation">advanced personal installation</a> for personal sideloading and policy requirements. Attaching the ZIP to chat is not proof of installation.</p>
             <div class="prompt-wrap">
-              <button class="copy-button" type="button" data-copy="cowork-prompt" aria-label="Copy Cowork installation prompt">Copy</button>
-              <pre id="cowork-prompt">Download and install this release for my personal use in Cowork:
-https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/cowork-plugin.zip
-
-Follow the bundled INSTALL.md. Use supported personal plugin installation if available; otherwise install all three skill folders under skills/ using your supported skill installation mechanism:
-- demo-on-demand, including all references/
-- generate-data, including companies.csv and names.csv
-- demo-builder-style-guidelines
-
-Ask before replacing existing skills or local edits. Keep every companion file and do not fetch replacements from main. Report the release version, installed skill names, versions, and actual locations. Verify both CSVs and all references are readable.
-
-State whether you registered the M365 plugin or installed only skill folders. Do not claim success after merely downloading or extracting the ZIP. Verify discovery in a new conversation if possible; otherwise mark it unverified. If installation is blocked, explain the limitation and give the personal sideloading fallback from INSTALL.md. Do not deploy to my tenant.</pre>
+              <button class="copy-button" type="button" data-copy="cowork-prompt" aria-label="Copy Cowork verification prompt">Copy</button>
+              <pre id="cowork-prompt">Verify my installed demo tools without downloading, installing, deleting, or replacing anything.
+Check discovery of demo-on-demand, generate-data, and demo-builder-style-guidelines.
+Read companies.csv and names.csv through the installed generate-data skill, and open the installed
+demo builder's PRESENTER-GUIDE.md, QUALITY-STANDARDS.md, and TECHNOLOGY-GUIDANCE.md references.
+Check that the shared style guidance is readable. Report the skill versions and host-provided
+locations where available. Mark anything you cannot inspect as unverified; do not invent paths
+or infer plugin registration from files attached to this conversation.</pre>
             </div>
             <ul class="checklist">
               <li>Demo builder and three companion references</li>
               <li>Generate-data skill and both approved CSVs</li>
               <li>Shared style-guidelines skill</li>
             </ul>
-            <p class="source-note">Chat installation support requires testing. <a href="https://github.com/rob-foulkrod/mtt-demo-creation-tools/blob/main/plugins/INSTALL.md">Personal sideloading fallback</a></p>
+            <p class="source-note">Keep existing skills until the replacement ZIP is available and validated. Confirm any required removal and recovery plan before proceeding. <a href="https://github.com/rob-foulkrod/mtt-demo-creation-tools/blob/main/plugins/INSTALL.md">Full installation guide</a></p>
           </article>
 
           <article class="install-panel">
