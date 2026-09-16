@@ -6,17 +6,21 @@ import { unzipSync } from "fflate";
 import { PNG } from "pngjs";
 import { parseDocument } from "yaml";
 import { releasePolicy } from "./publish-release.mjs";
-import { assemblePackages, createIcon, createZip, frontmatter, parseTag, root, skillNames, validatePath, validateSkills } from "./release-packages.mjs";
+import { assemblePackages, createIcon, createZip, frontmatter, packageFilenames, parseTag, root, skillNames, validatePath, validateSkills } from "./release-packages.mjs";
 import { validateRepositoryVersions } from "./validate-versions.mjs";
 
 const skill = Buffer.from("---\nname: example\ndescription: Test skill.\nmetadata:\n  version: '1.0.0'\n---\n\n# Example\n");
+
+test("release archives use environment-qualified demo builder filenames", () => {
+  assert.deepEqual(packageFilenames, { cowork: "cowork-demo-builder.zip", scout: "scout-demo-builder.zip" });
+});
 
 test("workflow keeps candidate builds read-only and publishes only pushed version tags", async () => {
   const document = parseDocument(await readFile(new URL("../.github/workflows/release.yml", import.meta.url), "utf8"));
   assert.equal(document.errors.length, 0);
   const workflow = document.toJS();
   assert.deepEqual(workflow.on.push.tags, ["v*"]);
-  assert.equal(workflow.on.workflow_dispatch.inputs.version.default, "v0.3.0");
+  assert.equal(workflow.on.workflow_dispatch.inputs.version.default, "v0.3.1");
   assert.equal(workflow.permissions.contents, "read");
   assert.equal(workflow.jobs.publish.permissions.contents, "write");
   assert.equal(workflow.jobs.publish.needs, "build");
@@ -192,8 +196,8 @@ test("repository packages contain complete, isolated runtime skills without muta
 });
 
 test("current skill logs and plugin release markers stay version-aligned", async () => {
-  const result = await validateRepositoryVersions("v0.3.0");
+  const result = await validateRepositoryVersions("v0.3.1");
   assert.equal(result.skills.length, 7);
-  assert.equal(result.releaseTag, "v0.3.0");
-  await assert.rejects(validateRepositoryVersions("v9.9.9"), /does not match Cowork manifest v0\.3\.0/);
+  assert.equal(result.releaseTag, "v0.3.1");
+  await assert.rejects(validateRepositoryVersions("v9.9.9"), /does not match Cowork manifest v0\.3\.1/);
 });

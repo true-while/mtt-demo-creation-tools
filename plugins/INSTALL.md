@@ -12,10 +12,10 @@ preserve all companion directories. Do not mix files from main into a released i
 The Cowork ZIP has manifest.json and PNG icons at its root, with skill folders under skills/.
 Install this package through Cowork's plugin interface, not through a chat download prompt.
 
-1. Download [cowork-plugin.zip](https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/cowork-plugin.zip)
+1. Download [cowork-demo-builder.zip](https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/cowork-demo-builder.zip)
   in your browser. Keep the ZIP intact; do not upload the Scout ZIP or GitHub's source-code archive.
 2. Open **Cowork > Customize > Plugins > Add plugin**.
-3. In **Add a plugin**, select **choose a file** and select the downloaded cowork-plugin.zip,
+3. In **Add a plugin**, select **choose a file** and select the downloaded cowork-demo-builder.zip,
   or drag and drop the ZIP into the dialog. Follow the on-screen installation and consent steps.
 4. Confirm **Demo Builder** appears in the installed plugins list.
 5. Start a new Cowork conversation and use this verification prompt:
@@ -44,7 +44,7 @@ With Node.js/npm and Microsoft 365 Agents Toolkit CLI installed:
 
 ```text
 atk auth login
-atk install --file-path ./cowork-plugin.zip --scope Personal
+atk install --file-path ./cowork-demo-builder.zip --scope Personal
 ```
 
 Complete authentication directly in the host or browser. Never paste credentials into a chat.

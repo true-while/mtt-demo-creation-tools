@@ -14,6 +14,7 @@ import { validateRepositoryVersions } from "./validate-versions.mjs";
 export const root = fileURLToPath(new URL("../", import.meta.url));
 export const schemaUrl = "https://developer.microsoft.com/json-schemas/teams/v1.28/MicrosoftTeams.schema.json";
 export const skillNames = ["demo-builder", "demo-builder-generate-data", "demo-builder-style-guidelines"];
+export const packageFilenames = Object.freeze({ cowork: "cowork-demo-builder.zip", scout: "scout-demo-builder.zip" });
 const markdown = new MarkdownIt();
 
 export function parseTag(tag) {
@@ -161,7 +162,7 @@ export async function buildPackages(tag) {
   const { cowork, scout, manifest } = await assemblePackages(tag);
   const schemaSha256 = await validateManifest(manifest);
   const artifacts = {};
-  for (const [filename, files] of [["cowork-plugin.zip", cowork], ["scout-skills.zip", scout]]) {
+  for (const [filename, files] of [[packageFilenames.cowork, cowork], [packageFilenames.scout, scout]]) {
     const archive = createZip(files);
     const unpacked = unzipSync(archive);
     assert.deepEqual(Object.keys(unpacked).sort(), Object.keys(files).sort());

@@ -4,7 +4,7 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { parseTag, root } from "./release-packages.mjs";
+import { packageFilenames, parseTag, root } from "./release-packages.mjs";
 
 export function releasePolicy(releases, tag) {
   const version = parseTag(tag).split(".").map(BigInt);
@@ -30,7 +30,7 @@ export async function publishRelease() {
   const { existing, latest } = releasePolicy(releases, tag);
   assert.ok(!existing || existing.draft, `Release ${tag} is already published; published assets are never overwritten.`);
   const directory = path.join(root, "dist", tag);
-  const names = ["cowork-plugin.zip", "scout-skills.zip", "release-info.json", "SHA256SUMS.txt"];
+  const names = [...Object.values(packageFilenames), "release-info.json", "SHA256SUMS.txt"];
   const records = await Promise.all(names.map(async (name) => {
     const bytes = await readFile(path.join(directory, name));
     return { name, size: bytes.length, digest: `sha256:${createHash("sha256").update(bytes).digest("hex")}` };

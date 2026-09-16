@@ -1,10 +1,10 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.28/MicrosoftTeams.schema.json",
   "manifestVersion": "1.28",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "id": "69fcaf95-b633-48cf-9c4a-0de35c714e8f",
   "developer": {
-    "name": "MTT Demo Creation Tools",
+    "name": "Demo Builder",
     "websiteUrl": "https://github.com/rob-foulkrod/mtt-demo-creation-tools",
     "privacyUrl": "https://github.com/rob-foulkrod/mtt-demo-creation-tools/blob/main/docs/privacy.md",
     "termsOfUseUrl": "https://github.com/rob-foulkrod/mtt-demo-creation-tools/blob/main/LICENSE"
