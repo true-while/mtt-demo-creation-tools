@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Scout path for the MTT Demo Builder workshop.">
+  <title>Scout Workshop | MTT Demo Creation Tools</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("scoutTheme");
+      const theme = param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="workshop-pages.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="workshop.html">DEMO BUILDER WORKSHOP</a>
+      <div class="nav-links"><a href="#install">Install</a><a href="#investigate">Investigate</a><a href="#build">Build</a></div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Scout path</p>
+        <h1>Build with Scout</h1>
+        <p class="hero-copy">Install the three Demo Builder skills, investigate what they do, understand Scout's two package destinations, and begin a connected MS-4018 demonstration.</p>
+        <div class="meta"><span>15-20 minutes</span><span>Three stages</span><span>Personal skills</span></div>
+      </div>
+    </section>
+
+    <section id="install" aria-labelledby="install-heading">
+      <div class="container">
+        <div class="section-heading"><h2 id="install-heading">1. Install</h2><p>The prompt below installs every skill folder from the same release into Scout's configured personal skills location.</p></div>
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-body">
+            <h3>Copy and run the installation prompt in Scout</h3>
+            <ol>
+              <li>Open Scout and start a <strong>new chat</strong>.</li>
+              <li>Select <strong>Copy install prompt</strong> below.</li>
+              <li>Paste the prompt into the new Scout chat and run it.</li>
+              <li>Follow Scout's prompts, including confirming any replacement of existing skills.</li>
+            </ol>
+            <p><strong>Running this prompt in Scout installs the three Demo Builder skills for your personal use.</strong></p>
+            <div class="prompt-wrap">
+              <button class="copy-button" type="button" data-copy="scout-install" aria-label="Copy Scout installation prompt">Copy install prompt</button>
+              <pre id="scout-install">Download and install this release for my personal use in Scout:
+https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/scout-skills.zip
+
+Follow the bundled INSTALL.md. Install all three skill folders at the ZIP root into your configured personal skills location:
+- demo-builder
+- demo-builder-generate-data, including companies.csv and names.csv
+- demo-builder-style-guidelines
+
+Ask before replacing existing skills or local edits. Preserve all support files and do not fetch replacements from main. When finished, report the release used, installed skill names, versions, and actual locations. Do not claim success after merely downloading or extracting the ZIP. If installation is blocked, explain the limitation and the supported manual steps.</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt" id="investigate" aria-labelledby="investigate-heading">
+      <div class="container">
+        <div class="section-heading"><h2 id="investigate-heading">2. Investigate</h2><p>Choose any questions that interest you. You do not need to use every prompt. Run each selected prompt separately and ask the installed skills to cite their own instructions.</p></div>
+        <div class="question-grid">
+          <article class="panel question-card">
+            <h3>Meet the skills</h3>
+            <div class="prompt-wrap"><button class="copy-button" type="button" data-copy="scout-question-roles" aria-label="Copy skill roles question">Copy</button><pre id="scout-question-roles">Using the installed instructions, explain what demo-builder, demo-builder-generate-data, and demo-builder-style-guidelines each own. Give one example of when to use each skill and one example of when not to use it. Cite the relevant rules.</pre></div>
+          </article>
+          <article class="panel question-card">
+            <h3>Installation and destination</h3>
+            <div class="prompt-wrap"><button class="copy-button" type="button" data-copy="scout-question-destination" aria-label="Copy destination question">Copy</button><pre id="scout-question-destination">What is the difference between where these skills are installed and where Demo Builder places a finished package? Report only host-provided locations and destinations supported by the installed instructions. Do not guess paths.</pre></div>
+          </article>
+          <article class="panel question-card">
+            <h3>Package structure</h3>
+            <div class="prompt-wrap"><button class="copy-button" type="button" data-copy="scout-question-package" aria-label="Copy package structure question">Copy</button><pre id="scout-question-package">Based on the installed demo-builder instructions, show every package structure it can create in this host. Explain what choice selects each structure and where each result is intended to go.</pre></div>
+          </article>
+          <article class="panel question-card">
+            <h3>Approved person names</h3>
+            <div class="prompt-wrap"><button class="copy-button" type="button" data-copy="scout-question-names" aria-label="Copy names CSV question">Copy</button><pre id="scout-question-names">What is names.csv for? Explain which skill validates and reads it, why another skill should not inspect it directly, and what happens when it is missing or unusable. Cite the installed data-skill rules.</pre></div>
+          </article>
+          <article class="panel question-card">
+            <h3>Companies and domains</h3>
+            <div class="prompt-wrap"><button class="copy-button" type="button" data-copy="scout-question-companies" aria-label="Copy companies CSV question">Copy</button><pre id="scout-question-companies">What does companies.csv control? Explain how approved company names and email domains are selected, and why the skills cannot invent or modify a company name. Cite the installed data-skill rules.</pre></div>
+          </article>
+          <article class="panel question-card">
+            <h3>Consistent artifacts</h3>
+            <div class="prompt-wrap"><button class="copy-button" type="button" data-copy="scout-question-style" aria-label="Copy style guidance question">Copy</button><pre id="scout-question-style">How does demo-builder-style-guidelines influence Word and Excel files in the same demo package? Describe the decisions it keeps consistent and cite the installed guidance.</pre></div>
+          </article>
+        </div>
+        <article class="panel check-panel">
+          <h3>Things to listen for</h3>
+          <ul class="checklist">
+            <li>The skills use Scout's configured personal skills location; the exact path must come from the host.</li>
+            <li>Demo Builder first asks, <strong>Will you be uploading to GitHub?</strong></li>
+            <li><strong>Yes</strong> produces a public GitHub-ready repository package; <strong>No</strong> produces a Cowork-compatible folder package in a selected destination.</li>
+            <li><strong>names.csv</strong> is the approved source for fictitious person names and is validated by the data skill.</li>
+            <li>Skill installation location and generated package destination are different concepts.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="build" aria-labelledby="build-heading">
+      <div class="container">
+        <div class="section-heading"><h2 id="build-heading">3. Build</h2><p>Start a clean Scout conversation and let Demo Builder research the course and industry before you choose its output branch.</p></div>
+        <div class="step"><div class="step-number">1</div><div class="step-body"><h3>Start a new chat</h3><p>Do not continue in the installation or investigation conversation.</p></div></div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-body">
+            <h3>Submit the scenario</h3>
+            <div class="prompt-wrap">
+              <button class="copy-button" type="button" data-copy="cola-prompt" aria-label="Copy cola company demo prompt">Copy</button>
+              <pre id="cola-prompt">Use the installed demo-builder skill to create a cohesive demo package for a fictional cola company. Build a storyline that connects the MS-4018 modules "Draft impactful documents using AI" and "Uncover new data insights with AI," so learners move naturally between working with documents in Word and gaining data insights in Excel.
+
+Before designing the scenario, research the current public MS-4018 module objectives and realistic cola beverage industry workflows. Let that research guide the business role, challenge, source materials, data, and handoff between the two modules. Use the installed data and style skills, approved fictitious identities, and entirely synthetic, public-safe data.
+
+Propose the storyline and artifact plan, then ask me only for the decisions required by the demo-builder workflow before creating the files.</pre>
+            </div>
+          </div>
+        </div>
+        <div class="step"><div class="step-number">3</div><div class="step-body"><h3>Complete the intake</h3><p>Choose whether this is a GitHub upload, then answer the destination, technology, starting experience, and build-scope questions. Let public research supply details that do not require your decision.</p></div></div>
+        <p class="source-note">Course references: <a href="https://learn.microsoft.com/en-us/training/modules/draft-impactful-documents-using-ai/">Draft impactful documents using AI</a> and <a href="https://learn.microsoft.com/en-us/training/modules/uncover-new-data-insights-ai/">Uncover new data insights with AI</a>.</p>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container footer-inner"><a href="workshop.html">Choose a different path</a><span>Scout workshop</span></div></footer>
+  <script>
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const prompt = document.getElementById(button.dataset.copy).textContent;
+        try { await navigator.clipboard.writeText(prompt); button.textContent = "Copied"; window.setTimeout(() => { button.textContent = "Copy"; }, 1800); }
+        catch { button.textContent = "Select text"; }
+      });
+    });
+  </script>
+</body>
+</html>
