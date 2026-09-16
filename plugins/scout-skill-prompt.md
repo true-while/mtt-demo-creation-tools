@@ -4,7 +4,7 @@ Historical authoring example, not a release build input. Tagged packages use the
 runtime and shared dependencies. See the [release strategy](../docs/deployment.md).
 
 ```text
-Create a Scout skill named demo-on-demand.
+Create a Scout skill named demo-builder.
 
 Generate a complete SKILL.md.
 

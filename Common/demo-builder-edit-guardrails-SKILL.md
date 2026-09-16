@@ -5,7 +5,7 @@ description: |
   editing either runtime skill, support skill, or companion reference to keep behaviour, quality,
   safety, publishing, and verification requirements aligned.
 metadata:
-  version: "1.0.3"
+   version: "1.0.4"
 ---
 
 ## Purpose
@@ -19,10 +19,10 @@ runtime demo-builder skills and their runtime references.
 ## Canonical source
 
 - **Public repository:** `https://github.com/rob-foulkrod/mtt-demo-creation-tools`
-- **Scout runtime skill:** `https://raw.githubusercontent.com/rob-foulkrod/mtt-demo-creation-tools/main/scout/demo-on-demand-SKILL.md`
+- **Scout runtime skill:** `https://raw.githubusercontent.com/rob-foulkrod/mtt-demo-creation-tools/main/scout/demo-builder-SKILL.md`
 - **Cowork runtime skill:** `https://raw.githubusercontent.com/rob-foulkrod/mtt-demo-creation-tools/main/cowork/demo-builder-SKILL.md`
 - **Shared edit guardrails:** `https://raw.githubusercontent.com/rob-foulkrod/mtt-demo-creation-tools/main/Common/demo-builder-edit-guardrails-SKILL.md`
-- **Generate-data folder:** `https://github.com/rob-foulkrod/mtt-demo-creation-tools/tree/main/Common/generate-data`
+- **Demo Builder Generate Data folder:** `https://github.com/rob-foulkrod/mtt-demo-creation-tools/tree/main/Common/demo-builder-generate-data`
 - **Change logs folder:** `https://github.com/rob-foulkrod/mtt-demo-creation-tools/tree/main/change%20logs`
 
 Use only the public GitHub repository above as the source of truth. Never use a personal SharePoint,
@@ -57,13 +57,28 @@ references, support skills, generated examples, documentation, or change logs.
 11. After pushing, read back the canonical GitHub files or commit metadata and verify that the branch
     contains the intended versions and files.
 
+## Environment-qualified runtime change logs
+
+Scout and Cowork runtime skills share the registered name `demo-builder`. To keep their release
+records unambiguous, use an environment-qualified log identity in each runtime changelog filename
+and title:
+
+- **Scout runtime:** `scout-demobuilder-<skill-version>-log.md` with title
+   `scout-demobuilder <skill-version>-log`.
+- **Cowork runtime:** `cowork-demo-builder-<skill-version>-log.md` with title
+   `cowork-demo-builder <skill-version>-log`.
+
+Inside both logs, keep `Skill name` as the actual registered name, `demo-builder`, and add an
+`Environment` section containing either `Scout` or `Cowork`. Shared and support skills that do not
+have separate environment implementations continue using `<skill-name>-<skill-version>-log.md`.
+
 ## Cross-skill parity checks
 
 Before committing, verify that both Scout and Cowork still enforce equivalent requirements for:
 
 - Public-safe content only: no confidential customer data, real tenant details, private URLs,
   credentials, secrets, real people, or customer-specific metrics.
-- Required fictional Microsoft Fake Company usage and approved generate-data dependency before
+- Required fictional Microsoft Fake Company usage and approved demo-builder-generate-data dependency before
   creating fictional companies, people, email addresses, or sample data.
 - Public classification and Microsoft Fake Company disclaimer in branch-appropriate overview,
   README, presenter guide, and governance materials.
@@ -84,7 +99,7 @@ Before committing, verify that both Scout and Cowork still enforce equivalent re
 Use targeted checks appropriate to the edit:
 
 1. Search for removed or weakened guardrails: `confidential`, `private URL`, `Public`, `Fake Company`,
-   `generate-data`, `approval`, `overwrite`, `sample-data`, `verification`, and `SharePoint`.
+   `demo-builder-generate-data`, `approval`, `overwrite`, `sample-data`, `verification`, and `SharePoint`.
 2. Confirm end-user runtime skills do not expose creator-only update, versioning, local install,
    change-log, or repository-maintenance procedures.
 3. Confirm support skills explicitly require this guardrail skill before edits.
@@ -93,6 +108,7 @@ Use targeted checks appropriate to the edit:
 5. Confirm every new companion reference is one level deep from its skill root unless the platform
    requires otherwise.
 6. Confirm line and approximate token limits for any platform with size constraints.
-7. Confirm README and change logs mention added, moved, or deleted files.
+7. Confirm README and change logs mention added, moved, or deleted files, and that runtime logs use
+   the required environment-qualified identity.
 8. Confirm local installed copies and GitHub source match when local sync is part of the task.
 9. If an issue is being addressed, include `Fixes #<number>` or `Refs #<number>` in the commit.

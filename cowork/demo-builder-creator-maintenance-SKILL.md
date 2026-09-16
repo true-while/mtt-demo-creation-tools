@@ -5,7 +5,7 @@ description: |
   local installed copies, version numbers, and change logs. Always loads the shared edit guardrails
   support skill before edits. Do not use for end-user demo package creation.
 metadata:
-  version: "1.1.2"
+  version: "1.2.0"
   cowork-category: "automation"
   cowork-icon: "Tools"
 ---
@@ -28,29 +28,29 @@ the shared edit guardrails support skill and follow its cross-skill parity check
 - **Creator maintenance support skill:** `https://raw.githubusercontent.com/rob-foulkrod/mtt-demo-creation-tools/main/cowork/demo-builder-creator-maintenance-SKILL.md`
 - **Shared edit guardrails support skill:** `https://raw.githubusercontent.com/rob-foulkrod/mtt-demo-creation-tools/main/Common/demo-builder-edit-guardrails-SKILL.md`
 - **Change logs folder:** `https://github.com/rob-foulkrod/mtt-demo-creation-tools/tree/main/change%20logs`
-- **Generate-data folder:** `https://github.com/rob-foulkrod/mtt-demo-creation-tools/tree/main/Common/generate-data`
+- **Demo Builder Generate Data folder:** `https://github.com/rob-foulkrod/mtt-demo-creation-tools/tree/main/Common/demo-builder-generate-data`
 
 Use only the public GitHub repository above as the source of truth for skill source files,
-companion references, support skills, generate-data files, change logs, updates, and documentation.
+companion references, support skills, demo-builder-generate-data files, change logs, updates, and documentation.
 Do not use a personal SharePoint, OneDrive, Teams file, internal catalog, or private folder as a
 canonical source.
 
-## Generate-data dependency maintenance
+## Demo Builder Generate Data dependency maintenance
 
-- **Required version:** `2026.09.04.4` or newer.
-- Install the generate-data skill as a complete folder containing `SKILL.md`, `companies.csv`, and
+- **Required version:** `2026.09.16.1` or newer.
+- Install the `demo-builder-generate-data` skill as a complete folder containing `SKILL.md`, `companies.csv`, and
   `names.csv`.
 - When downloading directly, use the raw files from:
-  1. `https://raw.githubusercontent.com/rob-foulkrod/mtt-demo-creation-tools/main/Common/generate-data/SKILL.md`
-  2. `https://raw.githubusercontent.com/rob-foulkrod/mtt-demo-creation-tools/main/Common/generate-data/companies.csv`
-  3. `https://raw.githubusercontent.com/rob-foulkrod/mtt-demo-creation-tools/main/Common/generate-data/names.csv`
+  1. `https://raw.githubusercontent.com/rob-foulkrod/mtt-demo-creation-tools/main/Common/demo-builder-generate-data/SKILL.md`
+  2. `https://raw.githubusercontent.com/rob-foulkrod/mtt-demo-creation-tools/main/Common/demo-builder-generate-data/companies.csv`
+  3. `https://raw.githubusercontent.com/rob-foulkrod/mtt-demo-creation-tools/main/Common/demo-builder-generate-data/names.csv`
 
 ## Local file validation
 
-- **Cowork skill path:** `/Documents/Cowork/skills/demo-on-demand/SKILL.md`.
-- **Generate-data skill folder:** `/Documents/Cowork/skills/generate-data`.
+- **Cowork skill path:** `/Documents/Cowork/skills/demo-builder/SKILL.md`.
+- **Demo Builder Generate Data skill folder:** `/Documents/Cowork/skills/demo-builder-generate-data`.
 - Before running a maintenance update, validate that the Cowork skill local path exists and that the
-  generate-data folder contains `SKILL.md`, `companies.csv`, and `names.csv`.
+  demo-builder-generate-data folder contains `SKILL.md`, `companies.csv`, and `names.csv`.
 - If any required local file is missing, offer to download and install it from the full public GitHub
   URL before continuing.
 - If the maintainer provides a different Cowork skills root, validate that path instead and
@@ -60,10 +60,14 @@ canonical source.
 
 - Every update to the Cowork runtime skill, companion references, or this support skill must write a
   change log file in `https://github.com/rob-foulkrod/mtt-demo-creation-tools/tree/main/change%20logs`.
-- Name each change log file `<skill-name>-<skill-version>-log.md`; for Cowork runtime skill version
-  `2.3.2`, use `demo-on-demand-2.3.2-log.md`.
-- The change log title must be `<skill-name> <skill-version>-log`.
-- The change log must include `Skill name`, `Skill version`, `Additions`, and `Deletions` sections.
+- Name each Cowork runtime change log `cowork-demo-builder-<skill-version>-log.md`; for runtime
+  version `3.0.0`, use `cowork-demo-builder-3.0.0-log.md`.
+- The runtime change log title must be `cowork-demo-builder <skill-version>-log`.
+- Keep `Skill name` as the registered name `demo-builder`, and include an `Environment` section set
+  to `Cowork`.
+- This support skill's own logs continue using `<skill-name>-<skill-version>-log.md`.
+- The change log must include `Skill name`, `Environment` for runtime logs, `Skill version`,
+  `Additions`, and `Deletions` sections.
   If there are no deletions, write `None`.
 - Commit the change log file in the same commit as the skill update.
 

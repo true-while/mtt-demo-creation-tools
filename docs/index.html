@@ -348,7 +348,7 @@
           <article class="principle">
             <span>03</span>
             <h3>Responsible data</h3>
-            <p>The generate-data dependency validates fictional names and companies used in samples.</p>
+            <p>The demo-builder-generate-data dependency validates fictional names and companies used in samples.</p>
           </article>
         </div>
       </div>
@@ -367,15 +367,15 @@
             <ol>
               <li>Open <strong>Cowork &gt; Customize &gt; Plugins &gt; Add plugin</strong>.</li>
               <li>In <strong>Add a plugin</strong>, select <strong>choose a file</strong> and select the downloaded ZIP, or drag and drop the ZIP into the dialog. Follow the on-screen installation and consent steps.</li>
-              <li>Confirm the plugin appears in the installed plugins list.</li>
+              <li>Confirm <strong>Demo Builder</strong> appears in the installed plugins list.</li>
               <li>Start a new Cowork conversation and paste the verification prompt below.</li>
             </ol>
             <p class="source-note">Tenant policy must permit installation. See <a href="https://github.com/rob-foulkrod/mtt-demo-creation-tools/blob/main/plugins/INSTALL.md#advanced-personal-installation">advanced personal installation</a> for personal sideloading and policy requirements. Attaching the ZIP to chat is not proof of installation.</p>
             <div class="prompt-wrap">
               <button class="copy-button" type="button" data-copy="cowork-prompt" aria-label="Copy Cowork verification prompt">Copy</button>
               <pre id="cowork-prompt">Verify my installed demo tools without downloading, installing, deleting, or replacing anything.
-Check discovery of demo-on-demand, generate-data, and demo-builder-style-guidelines.
-Read companies.csv and names.csv through the installed generate-data skill, and open the installed
+Check discovery of demo-builder, demo-builder-generate-data, and demo-builder-style-guidelines.
+Read companies.csv and names.csv through the installed demo-builder-generate-data skill, and open the installed
 demo builder's PRESENTER-GUIDE.md, QUALITY-STANDARDS.md, and TECHNOLOGY-GUIDANCE.md references.
 Check that the shared style guidance is readable. Report the skill versions and host-provided
 locations where available. Mark anything you cannot inspect as unverified; do not invent paths
@@ -383,7 +383,7 @@ or infer plugin registration from files attached to this conversation.</pre>
             </div>
             <ul class="checklist">
               <li>Demo builder and three companion references</li>
-              <li>Generate-data skill and both approved CSVs</li>
+              <li>Demo-builder-generate-data skill and both approved CSVs</li>
               <li>Shared style-guidelines skill</li>
             </ul>
             <p class="source-note">Keep existing skills until the replacement ZIP is available and validated. Confirm any required removal and recovery plan before proceeding. <a href="https://github.com/rob-foulkrod/mtt-demo-creation-tools/blob/main/plugins/INSTALL.md">Full installation guide</a></p>
@@ -398,8 +398,8 @@ or infer plugin registration from files attached to this conversation.</pre>
 https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/scout-skills.zip
 
 Follow the bundled INSTALL.md. Install all three skill folders at the ZIP root into your configured personal skills location:
-- demo-on-demand
-- generate-data, including companies.csv and names.csv
+- demo-builder
+- demo-builder-generate-data, including companies.csv and names.csv
 - demo-builder-style-guidelines
 
 Ask before replacing existing skills or local edits. Preserve all support files and do not fetch replacements from main. This is a Scout skills package, not a Cowork app registration.
@@ -407,8 +407,8 @@ Ask before replacing existing skills or local edits. Preserve all support files 
 Report the release used, installed skill names, versions, and actual locations. Verify both CSVs and style guidance are readable. Verify discovery in a new conversation if possible; otherwise mark it unverified. Do not claim success after merely downloading or extracting the ZIP. If installation is blocked, explain the limitation and the supported manual steps.</pre>
             </div>
             <ul class="checklist">
-              <li>Demo-on-demand skill</li>
-              <li>Generate-data skill and both approved CSVs</li>
+              <li>Demo-builder skill</li>
+              <li>Demo-builder-generate-data skill and both approved CSVs</li>
               <li>Shared style-guidelines skill</li>
             </ul>
             <p class="source-note">If URL installation is unavailable, attach the downloaded ZIP and use the same prompt.</p>
@@ -426,7 +426,7 @@ Report the release used, installed skill names, versions, and actual locations. 
         </div>
         <article class="install-panel">
           <h3>Bakery sales analysis</h3>
-          <p>Paste this prompt into the demo-on-demand skill to generate the demonstration assets.</p>
+          <p>Paste this prompt into the demo-builder skill to generate the demonstration assets.</p>
           <div class="prompt-wrap">
             <button class="copy-button" type="button" data-copy="bakery-demo-prompt" aria-label="Copy bakery sales analysis demonstration prompt">Copy</button>
             <pre id="bakery-demo-prompt">This demo will be based on the customization and curation of the MS-4018 course, specifically Module 6, “Excel: Uncover New Data Insights with AI.”

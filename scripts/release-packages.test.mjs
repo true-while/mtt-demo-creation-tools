@@ -7,6 +7,7 @@ import { PNG } from "pngjs";
 import { parseDocument } from "yaml";
 import { releasePolicy } from "./publish-release.mjs";
 import { assemblePackages, createIcon, createZip, frontmatter, parseTag, root, skillNames, validatePath, validateSkills } from "./release-packages.mjs";
+import { validateRepositoryVersions } from "./validate-versions.mjs";
 
 const skill = Buffer.from("---\nname: example\ndescription: Test skill.\nmetadata:\n  version: '1.0.0'\n---\n\n# Example\n");
 
@@ -15,13 +16,33 @@ test("workflow keeps candidate builds read-only and publishes only pushed versio
   assert.equal(document.errors.length, 0);
   const workflow = document.toJS();
   assert.deepEqual(workflow.on.push.tags, ["v*"]);
-  assert.equal(workflow.on.workflow_dispatch.inputs.version.default, "v0.1.0");
+  assert.equal(workflow.on.workflow_dispatch.inputs.version.default, "v0.3.0");
   assert.equal(workflow.permissions.contents, "read");
   assert.equal(workflow.jobs.publish.permissions.contents, "write");
   assert.equal(workflow.jobs.publish.needs, "build");
   assert.equal(workflow.jobs.publish.if, "github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')");
   for (const job of Object.values(workflow.jobs)) {
     for (const step of job.steps.filter((entry) => entry.uses)) assert.match(step.uses, /@[a-f0-9]{40}$/);
+  }
+});
+
+test("runtime changelogs use environment-qualified identities", async () => {
+  const cases = [
+    ["scout-demobuilder-2026.09.16.1-log.md", "scout-demobuilder", "Scout"],
+    ["cowork-demo-builder-3.0.0-log.md", "cowork-demo-builder", "Cowork"]
+  ];
+  for (const [filename, logIdentity, environment] of cases) {
+    const text = await readFile(path.join(root, "change logs", filename), "utf8");
+    assert.match(text, new RegExp(`^# ${logIdentity} .+-log`, "m"));
+    assert.match(text, /^## Skill name\r?\n\r?\ndemo-builder$/m);
+    assert.match(text, new RegExp(`^## Environment\\r?\\n\\r?\\n${environment}$`, "m"));
+  }
+});
+
+test("maintenance skills require the renamed data dependency release", async () => {
+  for (const environment of ["scout", "cowork"]) {
+    const text = await readFile(path.join(root, environment, "demo-builder-creator-maintenance-SKILL.md"), "utf8");
+    assert.match(text, /\*\*Required version:\*\* `2026\.09\.16\.1` or newer\./);
   }
 });
 
@@ -109,7 +130,7 @@ test("Cowork ZIP includes every runtime reference with source content and exclud
   for (const required of ["PRESENTER-GUIDE.md", "QUALITY-STANDARDS.md", "TECHNOLOGY-GUIDANCE.md"]) {
     assert.ok(references.includes(required), `Missing required source reference: ${required}`);
   }
-  const prefix = "skills/demo-on-demand/references/";
+  const prefix = "skills/demo-builder/references/";
   assert.deepEqual(Object.keys(archive).filter((filePath) => filePath.startsWith(prefix)).sort(), references.map((filePath) => `${prefix}${filePath}`));
   for (const reference of references) {
     const source = await readFile(path.join(referenceRoot, reference));
@@ -147,11 +168,11 @@ test("repository packages contain complete, isolated runtime skills without muta
   const { cowork, scout, manifest } = await assemblePackages("v1.0.0");
   assert.equal(manifest.version, "1.0.0");
   assert.deepEqual(manifest.agentSkills.map((entry) => entry.folder), skillNames.map((name) => `./skills/${name}`));
-  for (const filePath of ["generate-data/SKILL.md", "generate-data/companies.csv", "generate-data/names.csv", "demo-builder-style-guidelines/SKILL.md"]) {
+  for (const filePath of ["demo-builder-generate-data/SKILL.md", "demo-builder-generate-data/companies.csv", "demo-builder-generate-data/names.csv", "demo-builder-style-guidelines/SKILL.md"]) {
     assert.deepEqual(cowork[`skills/${filePath}`], scout[filePath]);
   }
-  assert.match(cowork["skills/demo-on-demand/SKILL.md"].toString(), /No repository package/);
-  assert.match(scout["demo-on-demand/SKILL.md"].toString(), /Will you be uploading to GitHub\?/);
+  assert.match(cowork["skills/demo-builder/SKILL.md"].toString(), /No repository package/);
+  assert.match(scout["demo-builder/SKILL.md"].toString(), /Will you be uploading to GitHub\?/);
   assert.ok(!scout["manifest.json"]);
   for (const files of [cowork, scout]) {
     assert.ok(!Object.keys(files).some((filePath) => /creator-maintenance|edit-guardrails/.test(filePath)));
@@ -159,13 +180,20 @@ test("repository packages contain complete, isolated runtime skills without muta
       assert.doesNotMatch(bytes.toString(), /raw\.githubusercontent\.com\/rob-foulkrod\/mtt-demo-creation-tools\/main|\/Documents\/Cowork\/skills|DEMO-INSTRUCTIONS-REFERENCE\.docx/, filePath);
     }
     const prefix = files === cowork ? "skills/" : "";
-    const data = files[`${prefix}generate-data/SKILL.md`].toString();
+    const data = files[`${prefix}demo-builder-generate-data/SKILL.md`].toString();
     assert.match(data, /Never invent a company or person name/);
     assert.match(data, /Cross-check every generated name/);
     assert.match(data, /Never derive a variant/);
-    const demo = files[`${prefix}demo-on-demand/SKILL.md`].toString();
+    const demo = files[`${prefix}demo-builder/SKILL.md`].toString();
     for (const rule of [/Microsoft Fake Company/, /Classification: Public/, /approval/i, /No silent overwrite|overwrite/i, /sample-data/, /re-list/i]) {
       assert.match(demo, rule);
     }
   }
+});
+
+test("current skill logs and plugin release markers stay version-aligned", async () => {
+  const result = await validateRepositoryVersions("v0.3.0");
+  assert.equal(result.skills.length, 7);
+  assert.equal(result.releaseTag, "v0.3.0");
+  await assert.rejects(validateRepositoryVersions("v9.9.9"), /does not match Cowork manifest v0\.3\.0/);
 });

@@ -5,7 +5,9 @@
 - **SHA256SUMS.txt**: SHA-256 checksums of the ZIPs and release-info.json.
 - **release-info.json**: package version, stable Cowork app ID, source commit, schema hash, and individual skill versions.
 
-Both packages include demo-on-demand, generate-data with both approved CSVs, and shared style
+The Cowork plugin is displayed as **Demo Builder** after installation.
+
+Both packages include demo-builder, demo-builder-generate-data with both approved CSVs, and shared style
 guidance. Cowork also includes its presenter, quality, and technology references. Runtime skill
 files do not self-update from main. Scout retains its GitHub/non-GitHub branch; Cowork remains
 folder-native.
@@ -18,7 +20,7 @@ you do not need both.
 **Cowork:** download cowork-plugin.zip in your browser and keep it zipped. Open
 **Cowork > Customize > Plugins > Add plugin**. In **Add a plugin**, select **choose a file** and select
 the downloaded ZIP, or drag and drop it into the dialog. Follow the on-screen installation and consent
-steps. Confirm the plugin appears installed,
+steps. Confirm **Demo Builder** appears installed,
 then start a new conversation and use the verification prompt in the bundled INSTALL.md. Attaching
 the ZIP to chat is not proof of persistent installation.
 

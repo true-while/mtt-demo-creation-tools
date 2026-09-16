@@ -6,7 +6,8 @@
     "node": ">=22"
   },
   "scripts": {
-    "test": "node --test scripts/release-packages.test.mjs tests/*.test.mjs",
+    "validate:versions": "node scripts/validate-versions.mjs",
+    "test": "npm run validate:versions && node --test scripts/release-packages.test.mjs tests/*.test.mjs",
     "package": "node scripts/release-packages.mjs"
   },
   "devDependencies": {

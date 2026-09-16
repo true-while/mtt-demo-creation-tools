@@ -9,10 +9,11 @@ import { unzipSync, zipSync } from "fflate";
 import MarkdownIt from "markdown-it";
 import { PNG } from "pngjs";
 import { parseDocument } from "yaml";
+import { validateRepositoryVersions } from "./validate-versions.mjs";
 
 export const root = fileURLToPath(new URL("../", import.meta.url));
 export const schemaUrl = "https://developer.microsoft.com/json-schemas/teams/v1.28/MicrosoftTeams.schema.json";
-export const skillNames = ["demo-on-demand", "generate-data", "demo-builder-style-guidelines"];
+export const skillNames = ["demo-builder", "demo-builder-generate-data", "demo-builder-style-guidelines"];
 const markdown = new MarkdownIt();
 
 export function parseTag(tag) {
@@ -118,15 +119,15 @@ async function addDirectory(files, source, destination) {
 export async function assemblePackages(tag) {
   const version = parseTag(tag);
   const shared = {};
-  await addDirectory(shared, "Common/generate-data", "generate-data");
+  await addDirectory(shared, "Common/demo-builder-generate-data", "demo-builder-generate-data");
   shared["demo-builder-style-guidelines/SKILL.md"] = await sourceFile("Common/demo-builder-style-guidelines-SKILL.md");
-  for (const required of ["generate-data/SKILL.md", "generate-data/companies.csv", "generate-data/names.csv"]) {
+  for (const required of ["demo-builder-generate-data/SKILL.md", "demo-builder-generate-data/companies.csv", "demo-builder-generate-data/names.csv"]) {
     assert.ok(shared[required]?.length, `Missing or empty dependency: ${required}`);
   }
-  const scout = { ...shared, "demo-on-demand/SKILL.md": await sourceFile("scout/demo-on-demand-SKILL.md") };
+  const scout = { ...shared, "demo-builder/SKILL.md": await sourceFile("scout/demo-builder-SKILL.md") };
   const cowork = Object.fromEntries(Object.entries(shared).map(([filePath, bytes]) => [`skills/${filePath}`, bytes]));
-  cowork["skills/demo-on-demand/SKILL.md"] = await sourceFile("cowork/demo-builder-SKILL.md");
-  await addDirectory(cowork, "cowork/references", "skills/demo-on-demand/references");
+  cowork["skills/demo-builder/SKILL.md"] = await sourceFile("cowork/demo-builder-SKILL.md");
+  await addDirectory(cowork, "cowork/references", "skills/demo-builder/references");
   const manifest = JSON.parse(await readFile(path.join(root, "plugins/cowork-manifest.json"), "utf8"));
   manifest.version = version;
   assert.equal(manifest.manifestVersion, "1.28");
@@ -156,6 +157,7 @@ export async function validateManifest(manifest) {
 }
 
 export async function buildPackages(tag) {
+  await validateRepositoryVersions(tag);
   const { cowork, scout, manifest } = await assemblePackages(tag);
   const schemaSha256 = await validateManifest(manifest);
   const artifacts = {};

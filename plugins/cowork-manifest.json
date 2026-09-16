@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.28/MicrosoftTeams.schema.json",
   "manifestVersion": "1.28",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "id": "69fcaf95-b633-48cf-9c4a-0de35c714e8f",
   "developer": {
     "name": "MTT Demo Creation Tools",
@@ -10,18 +10,18 @@
     "termsOfUseUrl": "https://github.com/rob-foulkrod/mtt-demo-creation-tools/blob/main/LICENSE"
   },
   "name": {
-    "short": "MTT Demo Tools",
-    "full": "MTT Demo Creation Tools for Copilot Cowork"
+    "short": "Demo Builder",
+    "full": "Demo Builder for Microsoft Copilot Cowork"
   },
   "description": {
     "short": "Public-safe demos with presenter guidance and approved sample data.",
-    "full": "Folder-native demo creation for Microsoft Technical Trainers. Includes demo-on-demand, generate-data with approved names and companies, and shared visual style guidance. Intended for personal sideloading; tenant permissions and host capabilities apply."
+    "full": "Folder-native demo creation for Microsoft Technical Trainers. Includes demo-builder, demo-builder-generate-data with approved names and companies, and shared visual style guidance. Intended for personal sideloading; tenant permissions and host capabilities apply."
   },
   "icons": { "color": "color.png", "outline": "outline.png" },
   "accentColor": "#b11f4b",
   "agentSkills": [
-    { "folder": "./skills/demo-on-demand" },
-    { "folder": "./skills/generate-data" },
+    { "folder": "./skills/demo-builder" },
+    { "folder": "./skills/demo-builder-generate-data" },
     { "folder": "./skills/demo-builder-style-guidelines" }
   ]
 }

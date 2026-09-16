@@ -1,7 +1,7 @@
 ---
-name: demo-on-demand
-description: |
-  Builds a clean, public-safe demo-on-demand package for an MTT private delivery and places it in
+name: demo-builder
+description: |2
+   Builds a clean, public-safe demo package for an MTT private delivery and places it in
   a user-selected OneDrive or SharePoint folder. Produces one polished overview Page plus a
   `demo/` folder containing a concise Word presenter guide and substantive fictional sample data.
   Use when the user asks to "create a demo on demand", "build a demo package", "make a Copilot,
@@ -10,14 +10,14 @@ description: |
   or a GitHub-ready repository. Do NOT use for document, docx, or Word-only deliverables - use docx
   instead. Do NOT use for a plain slide or deck - use the built-in pptx instead. Do
   NOT use for an MTT initiative.
-metadata: {version: "2.4.1", cowork-category: "automation", cowork-icon: "Rocket"}
+metadata: {version: "3.0.0", cowork-category: "automation", cowork-icon: "Rocket"}
 ---
 
 ## Version and Bundled References
 
-- **Current version:** `2.4.1`
+- **Current version:** `3.0.0`
 - **Public repository:** `https://github.com/rob-foulkrod/mtt-demo-creation-tools`
-- **Data dependency:** bundled `generate-data` skill, including `companies.csv` and `names.csv`.
+- **Data dependency:** bundled `demo-builder-generate-data` skill, including `companies.csv` and `names.csv`.
 - **Style dependency:** bundled `demo-builder-style-guidelines` skill.
 - **Quality standards reference:** [references/QUALITY-STANDARDS.md](references/QUALITY-STANDARDS.md)
 - **Presenter guide reference:** [references/PRESENTER-GUIDE.md](references/PRESENTER-GUIDE.md)
@@ -26,12 +26,12 @@ metadata: {version: "2.4.1", cowork-category: "automation", cowork-icon: "Rocket
 Use the installed skills and companions from this release. Resolve each skill by its registered
 name and host-provided location; do not assume a filesystem root or fetch replacement instructions.
 
-## Generate-data Dependency
+## Demo Builder Generate Data Dependency
 
-- Load generate-data before creating fictional companies, people, email addresses, or sample data.
-- Do not inspect generate-data's companion directory from this skill. Generate-data owns validation
+- Load `demo-builder-generate-data` before creating fictional companies, people, email addresses, or sample data.
+- Do not inspect `demo-builder-generate-data`'s companion directory from this skill. That skill owns validation
   and reading of its own `companies.csv` and `names.csv` files.
-- If generate-data reports missing, empty, malformed, or unusable companion data, follow its
+- If `demo-builder-generate-data` reports missing, empty, malformed, or unusable companion data, follow its
   documented stop or role-placeholder fallback behavior. Do not invent replacement names or silently
   download files.
 

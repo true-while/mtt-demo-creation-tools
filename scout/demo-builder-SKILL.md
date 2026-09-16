@@ -1,7 +1,7 @@
 ---
-name: demo-on-demand
+name: demo-builder
 description: |
-  Builds public-safe demo-on-demand packages for MTT private deliveries and first asks, "Will you
+  Builds public-safe demo packages for MTT private deliveries and first asks, "Will you
   be uploading to GitHub?" Routes Yes to a GitHub-ready repository package and No to a
   Cowork-compatible overview Page plus `demo/` folder. Use when the user asks to "create a demo on
   demand", "build an MTT demo package", "make a Scout, Cowork, Copilot, Agent Builder, SharePoint
@@ -9,27 +9,27 @@ description: |
   for a private delivery". Do NOT use for confidential customer data or an MTT idea or initiative.
   Do NOT use for a standalone document - use docx instead; a standalone spreadsheet - use xlsx
   instead; or a deck or slide - use pptx instead.
-metadata: {version: "2026.09.11.2"}
+metadata: {version: "2026.09.16.1"}
 ---
 
-Use this skill when an MTT wants to create a demo-on-demand package for a private delivery. The package must be generated from the user's current requirements and must not copy proprietary or copyrighted material from prior examples.
+Use this skill when an MTT wants to create a demo package for a private delivery. The package must be generated from the user's current requirements and must not copy proprietary or copyrighted material from prior examples.
 
 Skill version:
-Version: 2026.09.11.2
+Version: 2026.09.16.1
 
 Source and bundled dependencies:
 - Public repository: `https://github.com/rob-foulkrod/mtt-demo-creation-tools`
-- Data dependency: bundled `generate-data` skill, including `companies.csv` and `names.csv`.
+- Data dependency: bundled `demo-builder-generate-data` skill, including `companies.csv` and `names.csv`.
 - Style dependency: bundled `demo-builder-style-guidelines` skill.
 
 Use the installed skills and companions from this release. Resolve each skill by its registered name
 and host-provided location; do not assume a filesystem root or fetch replacement instructions.
 The public GitHub repository is the source of truth, not any private folder, catalog, or shared file.
 
-Generate-data dependency:
-- Before creating any fictional company, person, email address, or sample data, load the bundled generate-data skill.
-- Do not inspect generate-data's companion directory from this skill. The generate-data skill owns validation and reading of its own `companies.csv` and `names.csv` files.
-- If generate-data reports missing, empty, malformed, or unusable companion data, follow its documented stop or role-placeholder fallback behavior. Do not invent replacement names or silently download files.
+Demo Builder Generate Data dependency:
+- Before creating any fictional company, person, email address, or sample data, load the bundled `demo-builder-generate-data` skill.
+- Do not inspect `demo-builder-generate-data`'s companion directory from this skill. That skill owns validation and reading of its own `companies.csv` and `names.csv` files.
+- If `demo-builder-generate-data` reports missing, empty, malformed, or unusable companion data, follow its documented stop or role-placeholder fallback behavior. Do not invent replacement names or silently download files.
 
 Core purpose:
 Create a complete, public-safe demo package containing presenter instructions and supporting files for Microsoft technology demos tailored to an industry, role, fictional customer scenario, and realistic business workflow. The workflow must branch based on whether the user wants a public GitHub upload.
@@ -50,7 +50,7 @@ Create a complete, public-safe demo package containing presenter instructions an
 - A standalone spreadsheet -> use the **xlsx** skill.
 - A standalone slide deck -> use the **pptx** skill.
 - An MTT idea or initiative -> use the **mtt-initiative-creator** skill.
-- General GitHub repository work that is not an MTT demo-on-demand package.
+- General GitHub repository work that is not an MTT demo package.
 
 Required first prompt:
 Before collecting GitHub account, repository name, staging location, or destination folder, ask exactly: "Will you be uploading to GitHub?" Provide Yes and No choices. If the user already clearly answered Yes or No in the current request, record that answer and do not repeat the question.
@@ -302,7 +302,7 @@ Quality bar:
 - **Public-safe content only:** Never use confidential customer data, real tenant details, private
   URLs, credentials, secrets, real people, or customer-specific metrics.
 - **GitHub-only skill source:** Use `https://github.com/rob-foulkrod/mtt-demo-creation-tools` as
-  the only source of truth for this skill, the Cowork reference, generate-data files, change logs,
+  the only source of truth for this skill, the Cowork reference, demo-builder-generate-data files, change logs,
   updates, and documentation. Never use or cite a personal SharePoint, OneDrive, Teams file,
   internal catalog, or private folder as the canonical skill source.
 - **Shared style system required:** Do not create artifacts until one shared style system is defined,

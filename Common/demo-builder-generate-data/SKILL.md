@@ -1,21 +1,21 @@
 ---
-name: generate-data
+name: demo-builder-generate-data
 description: >
   REQUIRED whenever synthetic, fake, or sample content will contain a COMPANY NAME or PERSON NAME.
   Microsoft legal policy permits only CELA-approved fictitious names, and this skill carries the approved lists.
   Use when the user says "generate fake data", "create synthetic/sample data", "build a demo dataset",
   "make sample files", "dummy/mock/test data", "CIE or Copilot demo examples", "courseware or class demo pack",
-  "invent a fictional company/customer/employee", or "/generate-data". Covers Excel, Word, PowerPoint and CSV. Load this BEFORE inventing any company or person name, including when the
+  "invent a fictional company/customer/employee", or "/demo-builder-generate-data". Covers Excel, Word, PowerPoint and CSV. Load this BEFORE inventing any company or person name, including when the
   data is a supporting artifact of a larger build. Do NOT use for real customer, employee, confidential, or production data.
 metadata:
-  version: "2026.09.11.2"
+  version: "2026.09.16.1"
 ---
 
-# Generate Data Skill
+# Demo Builder Generate Data Skill
 
 ## Version and Bundled Data
 
-- **Current version:** `2026.09.11.2`
+- **Current version:** `2026.09.16.1`
 - **Public repository:** `https://github.com/rob-foulkrod/mtt-demo-creation-tools`
 - **Approved company list:** `companies.csv` alongside this skill.
 - **Approved person-name list:** `names.csv` alongside this skill.
@@ -47,7 +47,7 @@ metadata:
 - **Building a full instructor-led course from existing source decks** — that is `courseware-create`. **But** if that build needs new sample data with company or person names, load this skill for the data portion and hand the named entities back.
 - **Power BI, Dataverse or a live system query** — use the relevant data tool; that is real data.
 
-## Scope trigger (read first)
+## Scope trigger
 
 This skill is a **compliance gate**, not a convenience. It applies whenever fictitious names will appear in generated content, regardless of how large or small the data task is relative to the overall request.
 

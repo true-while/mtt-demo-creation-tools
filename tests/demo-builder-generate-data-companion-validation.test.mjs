@@ -65,7 +65,7 @@ async function validateGenerateDataCompanions(skillRoot) {
 }
 
 async function withCase(files, callback) {
-  const root = await mkdtemp(path.join(tmpdir(), 'generate-data-companion-validation-'));
+  const root = await mkdtemp(path.join(tmpdir(), 'demo-builder-generate-data-companion-validation-'));
   try {
     await Promise.all(
       Object.entries(files).map(([name, content]) => writeFile(path.join(root, name), content, 'utf8')),
@@ -85,7 +85,7 @@ async function rejectsWith(files, expectedMessage) {
   });
 }
 
-test('generate-data companion validation returns approved handoff values for complete files', async () => {
+test('demo-builder-generate-data companion validation returns approved handoff values for complete files', async () => {
   await withCase(
     {
       'companies.csv': 'CompanyName,SourceDomainText,EmailDomain\nContoso,contoso.com,contoso.com',
@@ -102,7 +102,7 @@ test('generate-data companion validation returns approved handoff values for com
   );
 });
 
-test('generate-data companion validation detects missing files', async () => {
+test('demo-builder-generate-data companion validation detects missing files', async () => {
   await rejectsWith(
     { 'companies.csv': 'CompanyName,SourceDomainText,EmailDomain\nContoso,contoso.com,contoso.com' },
     'names.csv missing',
@@ -113,7 +113,7 @@ test('generate-data companion validation detects missing files', async () => {
   );
 });
 
-test('generate-data companion validation detects empty files', async () => {
+test('demo-builder-generate-data companion validation detects empty files', async () => {
   await rejectsWith(
     {
       'companies.csv': '',
@@ -130,7 +130,7 @@ test('generate-data companion validation detects empty files', async () => {
   );
 });
 
-test('generate-data companion validation detects malformed files', async () => {
+test('demo-builder-generate-data companion validation detects malformed files', async () => {
   await rejectsWith(
     {
       'companies.csv': 'Name,Domain\nContoso,contoso.com',
