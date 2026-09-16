@@ -7,18 +7,18 @@ Release-tagged packages are the installation channel. GitHub
 ZIPs. Trainers choose either Cowork or Scout; neither product requires the other.
 
 - **Cowork:** browser download, then **Cowork > Customize > Plugins > Add plugin**. In **Add a plugin**,
-	select **choose a file** and select cowork-demo-builder.zip, or drag and drop the ZIP into the dialog.
+	select **choose a file** and select cowork-plugin.zip, or drag and drop the ZIP into the dialog.
 	Complete the on-screen installation and consent steps. Confirm the installed **Demo Builder** plugin, then verify
 	its skills in a new conversation. See [advanced personal installation](../plugins/INSTALL.md#advanced-personal-installation)
 	for personal sideloading and policy requirements.
 	Tenant policy applies to both UI and CLI installation. Chat download or extraction is not installation.
-- **Scout:** use the website installation prompt, or attach scout-demo-builder.zip and use the same prompt
+- **Scout:** use the website installation prompt, or attach scout-skills.zip and use the same prompt
 	to install all skill folders into the configured personal skills location.
 
 Host support, persistence, and activation require testing in the chosen product.
 
 The website continues publishing directly from main/docs without a build step. Stable
-`releases/latest/download/cowork-demo-builder.zip` and `releases/latest/download/scout-demo-builder.zip` links
+`releases/latest/download/cowork-plugin.zip` and `releases/latest/download/scout-skills.zip` links
 eliminate per-release HTML edits. Version-pinned
 downloads use `releases/download/v0.1.0/<asset-name>` instead.
 
@@ -56,7 +56,7 @@ versioned Microsoft schema URL and fails closed if unavailable.
 ```text
 npm ci --ignore-scripts
 npm test
-npm run package -- v0.3.1
+npm run package -- v0.3.0
 ```
 
 `npm test` runs `npm run validate:versions` first. The validator requires every versioned skill's
@@ -64,7 +64,7 @@ npm run package -- v0.3.1
 workflow default, and manifest skill folders to agree. The package command also rejects a requested
 tag that differs from `plugins/cowork-manifest.json`.
 
-Outputs are in dist/v0.3.1/: both ZIPs, SHA256SUMS.txt, and release-info.json. Local builds record a
+Outputs are in dist/v0.3.0/: both ZIPs, SHA256SUMS.txt, and release-info.json. Local builds record a
 null sourceCommit unless GITHUB_SHA is supplied. CI records the tagged commit. Text line endings,
 archive entry ordering, and ZIP timestamps are normalized; binary companions remain unchanged.
 The build never regenerates skill content using an AI model.
@@ -91,8 +91,8 @@ before pushing a new release tag.
 For example, for an unused version:
 
 ```text
-git tag -a v0.3.1 -m "MTT Demo Creation Tools v0.3.1"
-git push origin v0.3.1
+git tag -a v0.3.0 -m "MTT Demo Creation Tools v0.3.0"
+git push origin v0.3.0
 ```
 
 The tag push starts the release workflow. It does not modify the website. Normal human pushes to

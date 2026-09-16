@@ -10,8 +10,8 @@ Install the complete package for your chosen product from
 Each ZIP includes demo-builder, demo-builder-generate-data with both approved CSVs, shared style guidance,
 LICENSE, and INSTALL.md. Cowork additionally includes its references and an M365 plugin manifest.
 
-- [Cowork plugin ZIP](https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/cowork-demo-builder.zip)
-- [Scout skills ZIP](https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/scout-demo-builder.zip)
+- [Cowork plugin ZIP](https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/cowork-plugin.zip)
+- [Scout skills ZIP](https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/scout-skills.zip)
 - [Checksums](https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/SHA256SUMS.txt)
 
 **Cowork:** download the ZIP in your browser and install through **Customize > Plugins > Add plugin**
@@ -24,7 +24,7 @@ and [the deployment guide](docs/deployment.md) for release and acceptance-test d
 
 ```text
 Download and install this release for my personal use in Scout:
-https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/scout-demo-builder.zip
+https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/scout-skills.zip
 
 Follow INSTALL.md. Install all three skill folders at the ZIP root: demo-builder,
 demo-builder-generate-data (including companies.csv and names.csv), and demo-builder-style-guidelines.
@@ -37,7 +37,7 @@ If installation is blocked, explain the limitation rather than claiming success.
 
 ## Install in Cowork
 
-1. Download the [Cowork plugin ZIP](https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/cowork-demo-builder.zip)
+1. Download the [Cowork plugin ZIP](https://github.com/rob-foulkrod/mtt-demo-creation-tools/releases/latest/download/cowork-plugin.zip)
     in your browser. Keep it zipped; do not use the Scout ZIP or GitHub's source-code archive.
 2. Open **Cowork > Customize > Plugins > Add plugin**.
 3. In **Add a plugin**, select **choose a file** and select the downloaded ZIP, or drag and drop
