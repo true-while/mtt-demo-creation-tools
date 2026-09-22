@@ -70,8 +70,8 @@ async function loadCsvTable(tableId, csvConfig) {
     // Clear existing rows
     tbody.innerHTML = '';
     
-    // Add first 10 rows
-    const rowsToShow = rows.slice(0, 10);
+    // Add first 5 rows
+    const rowsToShow = rows.slice(0, 5);
     rowsToShow.forEach((row, index) => {
       const tr = document.createElement('tr');
       if (index < rowsToShow.length - 1) {
