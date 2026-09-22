@@ -1,0 +1,101 @@
+ProductionID,InspectorFirstName,InspectorLastName,Organization,Email,ProductLine,ProductName,ProductionDate,BatchSize,UnitsProduced,DefectiveUnits,DefectRate,InspectionResult,EquipmentID,Shift,QualityScore,RootCause,Status,Recommendation
+MFG-2024-001,Lara,Wolfe,Adatum Corporation,lara.wolfe@adatum.com,Electronics,Control Module A1,2024-09-15,500,500,2,0.004,PASS,EQ-101,Day,98,None,Active,APPROVE
+MFG-2024-002,Sang,Trinh,Tailwind Traders,sang.trinh@tailwindtraders.com,Assembly,Frame Assembly B2,2024-09-16,300,300,12,0.040,CONDITIONAL,EQ-102,Night,72,Calibration Drift,Active,INSPECT
+MFG-2024-003,Obinna,Ekechukwu,Fabrikam Inc,obinna.ekechukwu@fabrikam.com,Packaging,Box Assembly,2024-09-17,1000,1000,58,0.058,FAIL,EQ-103,Day,55,Material Variance,Active,HALT
+MFG-2024-004,Miyu,Hashimoto,Adventure Works Cycles,miyu.hashimoto@adventure-works.com,Manufacturing,Frame 27in,2024-09-18,800,800,4,0.005,PASS,EQ-104,Day,96,None,Active,APPROVE
+MFG-2024-005,Valentina,Huaman,Alpine Ski House,valentina.huaman@alpineskihouse.com,Assembly,Binding Assembly,2024-09-19,400,400,8,0.020,PASS,EQ-105,Evening,88,Minor Wear,Active,APPROVE
+MFG-2024-006,Amin,Alimov,Northwind Traders,amin.alimov@northwindtraders.com,Electronics,Power Supply 24V,2024-09-20,600,600,18,0.030,CONDITIONAL,EQ-106,Night,78,Thermal Drift,Active,INSPECT
+MFG-2024-007,Daniela,Petkovska,Contoso Ltd,daniela.petkovska@contoso.com,Manufacturing,Textile Roll A,2024-09-21,2000,2000,12,0.006,PASS,EQ-107,Day,94,None,Active,APPROVE
+MFG-2024-008,Pedro,Sapón,Tailwind Traders,pedro.sapon@tailwindtraders.com,Packaging,Shrink Wrap,2024-09-22,5000,5000,175,0.035,CONDITIONAL,EQ-108,Night,76,Machine Speed,Active,INSPECT
+MFG-2024-009,Gilbert,Bonsaint,Proseware Inc,gilbert.bonsaint@proseware.com,Assembly,Motor Mount,2024-09-23,450,450,9,0.020,PASS,EQ-109,Day,85,Minor Variance,Active,APPROVE
+MFG-2024-010,Hasna,Munira,Woodgrove Groceries,hasna.munira@woodgrovegroceries.com,Manufacturing,Label Roll B,2024-09-24,3000,3000,45,0.015,PASS,EQ-110,Evening,91,None,Active,APPROVE
+MFG-2024-011,Olivia,Wilson,Wide World Importers,olivia.wilson@wideworldimporters.com,Electronics,PCB Assembly C,2024-09-25,350,350,7,0.020,PASS,EQ-111,Day,87,Solder Quality,Active,APPROVE
+MFG-2024-012,Stevan,Danicic,Fabrikam Inc,stevan.danicic@fabrikam.com,Packaging,Carton Folding,2024-09-26,2500,2500,125,0.050,FAIL,EQ-112,Night,58,Equipment Malfunction,Active,HALT
+MFG-2024-013,Airi,Ilves,Relecloud,airi.ilves@relecloud.com,Assembly,Bracket Welding,2024-09-27,200,200,4,0.020,PASS,EQ-113,Day,89,None,Active,APPROVE
+MFG-2024-014,Tarja,Hyypiä,Trey Research,tarja.hyyppia@treyresearch.net,Manufacturing,Composite Panel,2024-09-28,600,600,6,0.010,PASS,EQ-114,Evening,93,None,Active,APPROVE
+MFG-2024-015,Izabella,Gyenes,Lucerne Publishing,izabella.gyenes@lucernepublishing.com,Electronics,Transformer Core,2024-09-29,1200,1200,24,0.020,PASS,EQ-115,Day,88,None,Active,APPROVE
+MFG-2024-016,Shokat,Younas,Southridge Video,shokat.younas@southridgevideo.com,Assembly,Cable Assembly,2024-09-30,800,800,24,0.030,CONDITIONAL,EQ-116,Evening,80,Insulation Issues,Active,INSPECT
+MFG-2024-017,Kinan,Kaunang,Lakeshore Retail,kinan.kaunang@lakeshore-retail.com,Packaging,Display Box,2024-10-01,4000,4000,120,0.030,CONDITIONAL,EQ-117,Day,79,Die Wear,Active,INSPECT
+MFG-2024-018,Håvard,Simonsen,Munson's Pickles and Preserves Farm,havard.simonsen@munsonspicklesandpreservesfarm.com,Manufacturing,Bottle Cap,2024-10-02,10000,10000,150,0.015,PASS,EQ-118,Day,91,None,Active,APPROVE
+MFG-2024-019,Zoe,Anagnostou,Margie's Travel,zoe.anagnostou@margiestravel.com,Assembly,Door Frame,2024-10-03,250,250,5,0.020,PASS,EQ-119,Evening,89,None,Active,APPROVE
+MFG-2024-020,Geeta,Bayan,Graphic Design Institute,geeta.bayan@graphicdesigninstitute.com,Electronics,Capacitor Bank,2024-10-04,500,500,15,0.030,CONDITIONAL,EQ-120,Day,80,Moisture Exposure,Active,INSPECT
+MFG-2024-021,Pankaj,Moharana,Tailspin Toys,pankaj.moharana@tailspintoys.com,Packaging,Toy Box Insert,2024-10-05,6000,6000,420,0.070,FAIL,EQ-121,Night,48,Tool Breakage,Active,HALT
+MFG-2024-022,Iñaki,Elizagutia,Wingtip Toys,inaki.elizagutia@wingtiptoys.com,Manufacturing,Plastic Component,2024-10-06,1500,1500,15,0.010,PASS,EQ-122,Day,92,None,Active,APPROVE
+MFG-2024-023,Joni,Shah,Humongous Insurance,joni.shah@humongousinsurance.com,Assembly,Connector Pin,2024-10-07,3000,3000,60,0.020,PASS,EQ-123,Evening,88,None,Active,APPROVE
+MFG-2024-024,Semira,Girma,First Up Consultants,semira.girma@firstupconsultants.com,Electronics,Relay Module,2024-10-08,400,400,8,0.020,PASS,EQ-124,Day,89,None,Active,APPROVE
+MFG-2024-025,Ausra,Gudaitiene,Graphic Design Institute,ausra.gudaitiene@graphicdesigninstitute.com,Packaging,Protective Wrap,2024-10-09,8000,8000,240,0.030,CONDITIONAL,EQ-125,Night,80,Moisture Control,Active,INSPECT
+MFG-2024-026,Yusuf,Osman,Boulder Innovations,yusuf.osman@boulder-innovations.com,Manufacturing,Metal Stamping,2024-10-10,700,700,7,0.010,PASS,EQ-126,Day,93,None,Active,APPROVE
+MFG-2024-027,Antón,Caneiro,Bellows College,anton.caneiro@bellowscollege.com,Assembly,Servo Motor,2024-10-11,300,300,6,0.020,PASS,EQ-127,Evening,88,None,Active,APPROVE
+MFG-2024-028,Taji,Baraka,School of Fine Art,taji.baraka@fineartschool.net,Electronics,Filter Capacitor,2024-10-12,2000,2000,40,0.020,PASS,EQ-128,Day,89,None,Active,APPROVE
+MFG-2024-029,Teresa,Andrade,Liberty's Delightful Sinful Bakery & Cafe,teresa.andrade@libertysdelightfulsinfulbakeryandcafe.com,Packaging,Bakery Box,2024-10-13,5000,5000,175,0.035,CONDITIONAL,EQ-129,Night,77,Humidity Issues,Active,INSPECT
+MFG-2024-030,Nabanita,Bandopadhyay,Lamna Healthcare Company,nabanita.bandopadhyay@lamnahealthcare.com,Manufacturing,Polymer Sheet,2024-10-14,1800,1800,18,0.010,PASS,EQ-130,Day,92,None,Active,APPROVE
+MFG-2024-031,Sanja,Jankovic,VanArsdel Ltd,sanja.jankovic@vanarsdelltd.com,Assembly,Control Valve,2024-10-15,200,200,4,0.020,PASS,EQ-131,Evening,89,None,Active,APPROVE
+MFG-2024-032,Marie,Methot,Nod Publishers,marie.methot@nodpublishers.com,Electronics,Logic Board,2024-10-16,400,400,8,0.020,PASS,EQ-132,Day,88,None,Active,APPROVE
+MFG-2024-033,Suresh,Hanafi,Contoso Pharmaceuticals,suresh.hanafi@contoso.com,Packaging,Medicine Bottle,2024-10-17,3000,3000,90,0.030,CONDITIONAL,EQ-133,Night,80,Sterilization Issue,Active,INSPECT
+MFG-2024-034,Gurpreet,Bawa,Contoso Suites,gurpreet.bawa@contososuites.com,Manufacturing,Fabric Roll C,2024-10-18,2200,2200,22,0.010,PASS,EQ-134,Day,92,None,Active,APPROVE
+MFG-2024-035,Zola,Sodlaka,Fabrikam Residences,zola.sodlaka@fabrikamresidences.com,Assembly,Hinge Assembly,2024-10-19,1000,1000,30,0.030,CONDITIONAL,EQ-135,Evening,79,Alignment Issue,Active,INSPECT
+MFG-2024-036,Ruben,Ghukasyan,Woodgrove Groceries,ruben.ghukasyan@woodgrovegroceries.com,Electronics,Power Converter,2024-10-20,500,500,10,0.020,PASS,EQ-136,Day,88,None,Active,APPROVE
+MFG-2024-037,Ozgur,Tekin,Zava Inc,ozgur.tekin@zava-online.com,Packaging,Corrugated Sheet,2024-10-21,7000,7000,210,0.030,CONDITIONAL,EQ-137,Night,80,Machine Calibration,Active,INSPECT
+MFG-2024-038,Meret,Caryyew,Adatum Corporation,meret.caryyew@adatum.com,Manufacturing,Wire Assembly,2024-10-22,900,900,9,0.010,PASS,EQ-138,Day,93,None,Active,APPROVE
+MFG-2024-039,Adam,Jelinek,Adventure Works Cycles,adam.jelinek@adventure-works.com,Assembly,Spoke Set,2024-10-23,1200,1200,36,0.030,CONDITIONAL,EQ-139,Evening,79,Tension Variance,Active,INSPECT
+MFG-2024-040,Christian,Forsberg,Alpine Ski House,christian.forsberg@alpineskihouse.com,Electronics,Sensor Unit,2024-10-24,350,350,7,0.020,PASS,EQ-140,Day,88,None,Active,APPROVE
+MFG-2024-041,Riley,Johnson,Best For You Organics Company,riley.johnson@bestforyouorganics.com,Packaging,Organic Label,2024-10-25,9000,9000,315,0.035,CONDITIONAL,EQ-141,Night,76,Adhesive Quality,Active,INSPECT
+MFG-2024-042,Lorato,Bogosi,Consolidated Messenger,lorato.bogosi@consolidatedmessenger.com,Manufacturing,Cardboard Sheet,2024-10-26,3500,3500,35,0.010,PASS,EQ-142,Day,92,None,Active,APPROVE
+MFG-2024-043,Hye-Ri,Jung,Northwind Traders,hye-ri.jung@northwindtraders.com,Assembly,Latch Assembly,2024-10-27,600,600,18,0.030,CONDITIONAL,EQ-143,Evening,80,Part Mismatch,Active,INSPECT
+MFG-2024-044,Mikola,Liashchanka,Contoso Ltd,mikola.liashchanka@contoso.com,Electronics,Oscillator,2024-10-28,300,300,6,0.020,PASS,EQ-144,Day,89,None,Active,APPROVE
+MFG-2024-045,Rajesh,Santoshi,Tailwind Traders,rajesh.santoshi@tailwindtraders.com,Packaging,Shipping Box,2024-10-29,6000,6000,180,0.030,CONDITIONAL,EQ-145,Night,80,Box Flap Issue,Active,INSPECT
+MFG-2024-046,Bohdan,Koziar,Proseware Inc,bohdan.koziar@proseware.com,Manufacturing,Rubber Gasket,2024-10-30,5000,5000,50,0.010,PASS,EQ-146,Day,92,None,Active,APPROVE
+MFG-2024-047,Toomas,Sild,Fourth Coffee,toomas.sild@fourthcoffee.com,Assembly,Valve Seat,2024-10-31,800,800,16,0.020,PASS,EQ-147,Evening,89,None,Active,APPROVE
+MFG-2024-048,Stefan,Beno,Wide World Importers,stefan.beno@wideworldimporters.com,Electronics,Network Interface,2024-11-01,400,400,8,0.020,PASS,EQ-148,Day,88,None,Active,APPROVE
+MFG-2024-049,Momchil,Nikolov,Fabrikam Inc,momchil.nikolov@fabrikam.com,Packaging,Inner Pack Foam,2024-11-02,4000,4000,140,0.035,CONDITIONAL,EQ-149,Night,77,Density Control,Active,INSPECT
+MFG-2024-050,Gulnoza,Anvarova,Relecloud,gulnoza.anvarova@relecloud.com,Manufacturing,Molded Part A,2024-11-03,1600,1600,16,0.010,PASS,EQ-150,Day,92,None,Active,APPROVE
+MFG-2024-051,Bahar,Kazemi,Trey Research,bahar.kazemi@treyresearch.net,Assembly,Bearing Housing,2024-11-04,500,500,10,0.020,PASS,EQ-151,Evening,89,None,Active,APPROVE
+MFG-2024-052,Kris,Lepmets,Lucerne Publishing,kris.lepmets@lucernepublishing.com,Electronics,Resistor Array,2024-11-05,2000,2000,40,0.020,PASS,EQ-152,Day,89,None,Active,APPROVE
+MFG-2024-053,Ngoc,Thach,Southridge Video,ngoc.thach@southridgevideo.com,Packaging,DVD Case,2024-11-06,3000,3000,105,0.035,CONDITIONAL,EQ-153,Night,77,Printing Defect,Active,INSPECT
+MFG-2024-054,Luka,Zupan,Lakeshore Retail,luka.zupan@lakeshore-retail.com,Manufacturing,Fabric Strip,2024-11-07,2500,2500,25,0.010,PASS,EQ-154,Day,92,None,Active,APPROVE
+MFG-2024-055,Nicolás,Ponce,Munson's Pickles and Preserves Farm,nicolas.ponce@munsonspicklesandpreservesfarm.com,Assembly,Lid Assembly,2024-11-08,4000,4000,80,0.020,PASS,EQ-155,Evening,89,None,Active,APPROVE
+MFG-2024-056,Upul,Amarasiri,Margie's Travel,upul.amarasiri@margiestravel.com,Electronics,Voltage Regulator,2024-11-09,600,600,12,0.020,PASS,EQ-156,Day,88,None,Active,APPROVE
+MFG-2024-057,Adriana,Mota,The Phone Company,adriana.mota@thephone-company.com,Packaging,Phone Protector,2024-11-10,5000,5000,175,0.035,CONDITIONAL,EQ-157,Night,77,Grip Material,Active,INSPECT
+MFG-2024-058,Tania,De Sousa,Tailspin Toys,tania.de-sousa@tailspintoys.com,Manufacturing,Doll Hair,2024-11-11,8000,8000,80,0.010,PASS,EQ-158,Day,92,None,Active,APPROVE
+MFG-2024-059,Abdulla,Isroilov,Wingtip Toys,abdulla.isroilov@wingtiptoys.com,Assembly,Wing Assembly,2024-11-12,1000,1000,20,0.020,PASS,EQ-159,Evening,89,None,Active,APPROVE
+MFG-2024-060,Leyla,Mammadova,Humongous Insurance,leyla.mammadova@humongousinsurance.com,Electronics,Relay Contact,2024-11-13,3000,3000,60,0.020,PASS,EQ-160,Day,89,None,Active,APPROVE
+MFG-2024-061,Fahd,Al-Otaibi,First Up Consultants,fahd.al-otaibi@firstupconsultants.com,Packaging,Consultant Kit,2024-11-14,2000,2000,70,0.035,CONDITIONAL,EQ-161,Night,77,Component Mix,Active,INSPECT
+MFG-2024-062,Miles,Abolrous,Graphic Design Institute,miles.abolrous@graphicdesigninstitute.com,Manufacturing,Printed Circuit,2024-11-15,800,800,8,0.010,PASS,EQ-162,Day,92,None,Active,APPROVE
+MFG-2024-063,Jan,Kozlowski,Boulder Innovations,jan.kozlowski@boulder-innovations.com,Assembly,Innovation Module,2024-11-16,400,400,8,0.020,PASS,EQ-163,Evening,89,None,Active,APPROVE
+MFG-2024-064,Natasa,Lekovic,Bellows College,natasa.lekovic@bellowscollege.com,Electronics,Lab Power Supply,2024-11-17,300,300,6,0.020,PASS,EQ-164,Day,88,None,Active,APPROVE
+MFG-2024-065,Dragan,Lazarevski,School of Fine Art,dragan.lazarevski@fineartschool.net,Packaging,Art Supply Box,2024-11-18,3000,3000,105,0.035,CONDITIONAL,EQ-165,Night,77,Box Alignment,Active,INSPECT
+MFG-2024-066,Elira,Kodra,Liberty's Delightful Sinful Bakery & Cafe,elira.kodra@libertysdelightfulsinfulbakeryandcafe.com,Manufacturing,Bakery Film,2024-11-19,4000,4000,40,0.010,PASS,EQ-166,Day,92,None,Active,APPROVE
+MFG-2024-067,Iustin,Munteanu,Lamna Healthcare Company,iustin.munteanu@lamnahealthcare.com,Assembly,Medical Bracket,2024-11-20,500,500,10,0.020,PASS,EQ-167,Evening,89,None,Active,APPROVE
+MFG-2024-068,Sanela,Ivanovic,VanArsdel Ltd,sanela.ivanovic@vanarsdelltd.com,Electronics,Medical Sensor,2024-11-21,400,400,8,0.020,PASS,EQ-168,Day,88,None,Active,APPROVE
+MFG-2024-069,Tim,Nyström,Nod Publishers,tim.nystrom@nodpublishers.com,Packaging,Book Cover,2024-11-22,6000,6000,210,0.035,CONDITIONAL,EQ-169,Night,77,Lamination Issue,Active,INSPECT
+MFG-2024-070,Farzan,Ansari,Contoso Pharmaceuticals,farzan.ansari@contoso.com,Manufacturing,Tablet Coating,2024-11-23,5000,5000,50,0.010,PASS,EQ-170,Day,92,None,Active,APPROVE
+MFG-2024-071,Yuina,Wada,Contoso Suites,yuina.wada@contososuites.com,Assembly,Suite Component,2024-11-24,700,700,14,0.020,PASS,EQ-171,Evening,89,None,Active,APPROVE
+MFG-2024-072,Samat,Eralieva,Fabrikam Residences,samat.eralieva@fabrikamresidences.com,Electronics,Door Sensor,2024-11-25,600,600,12,0.020,PASS,EQ-172,Day,88,None,Active,APPROVE
+MFG-2024-073,Noel,Gatdula,Woodgrove Groceries,noel.gatdula@woodgrovegroceries.com,Packaging,Grocery Bag,2024-11-26,8000,8000,280,0.035,CONDITIONAL,EQ-173,Night,77,Sealing Issue,Active,INSPECT
+MFG-2024-074,Fernanda,Sarmento,Zava Inc,fernanda.sarmento@zava-online.com,Manufacturing,Online Component,2024-11-27,900,900,9,0.010,PASS,EQ-174,Day,92,None,Active,APPROVE
+MFG-2024-075,Ilene,Vanderstar,Adatum Corporation,ilene.vanderstar@adatum.com,Assembly,Data Board,2024-11-28,800,800,16,0.020,PASS,EQ-175,Evening,89,None,Active,APPROVE
+MFG-2024-076,Bhumika,Chattopadhyay,Adventure Works Cycles,bhumika.chattopadhyay@adventure-works.com,Electronics,Chain Drive,2024-11-29,500,500,10,0.020,PASS,EQ-176,Day,88,None,Active,APPROVE
+MFG-2024-077,Ellis,Carmichael,Alpine Ski House,ellis.carmichael@alpineskihouse.com,Packaging,Ski Wax Box,2024-11-30,2000,2000,70,0.035,CONDITIONAL,EQ-177,Night,77,Wax Leakage,Active,INSPECT
+MFG-2024-078,Petra,Pavlic,Best For You Organics Company,petra.pavlic@bestforyouorganics.com,Manufacturing,Organic Wrapper,2024-12-01,4000,4000,40,0.010,PASS,EQ-178,Day,92,None,Active,APPROVE
+MFG-2024-079,Séamus,Mac Domhnaill,Consolidated Messenger,seamus.mac-domhnaill@consolidatedmessenger.com,Assembly,Message Slot,2024-12-02,1500,1500,30,0.020,PASS,EQ-179,Evening,89,None,Active,APPROVE
+MFG-2024-080,Zoran,Jokic,Northwind Traders,zoran.jokic@northwindtraders.com,Electronics,Trading Terminal,2024-12-03,300,300,6,0.020,PASS,EQ-180,Day,88,None,Active,APPROVE
+MFG-2024-081,Jukka-Pekka,Enestam,Contoso Ltd,jukka-pekka.enestam@contoso.com,Packaging,Contoso Label,2024-12-04,5000,5000,175,0.035,CONDITIONAL,EQ-181,Night,77,Printing Issue,Active,INSPECT
+MFG-2024-082,Srood,Sirwan,Tailwind Traders,srood.sirwan@tailwindtraders.com,Manufacturing,Trader Component,2024-12-05,1100,1100,11,0.010,PASS,EQ-182,Day,92,None,Active,APPROVE
+MFG-2024-083,Federico,Tercedor,Proseware Inc,federico.tercedor@proseware.com,Assembly,Software Module,2024-12-06,600,600,12,0.020,PASS,EQ-183,Evening,89,None,Active,APPROVE
+MFG-2024-084,Borys,Drubych,Fourth Coffee,borys.drubych@fourthcoffee.com,Electronics,Coffee Brewer PCB,2024-12-07,400,400,8,0.020,PASS,EQ-184,Day,88,None,Active,APPROVE
+MFG-2024-085,Abdukerim,Ibrahim,Wide World Importers,abdukerim.ibrahim@wideworldimporters.com,Packaging,Import Box,2024-12-08,7000,7000,245,0.035,CONDITIONAL,EQ-185,Night,77,Box Durability,Active,INSPECT
+MFG-2024-086,Navneet,Sandhu,Fabrikam Inc,navneet.sandhu@fabrikam.com,Manufacturing,Fabric Component,2024-12-09,1800,1800,18,0.010,PASS,EQ-186,Day,92,None,Active,APPROVE
+MFG-2024-087,Arnoud,Wolthuis,Relecloud,arnoud.wolthuis@relecloud.com,Assembly,Cloud Component,2024-12-10,700,700,14,0.020,PASS,EQ-187,Evening,89,None,Active,APPROVE
+MFG-2024-088,Kai,Carter,Trey Research,kai.carter@treyresearch.net,Electronics,Research Device,2024-12-11,500,500,10,0.020,PASS,EQ-188,Day,88,None,Active,APPROVE
+MFG-2024-089,Slavko,Mladjen,Lucerne Publishing,slavko.mladjen@lucernepublishing.com,Packaging,Publication Wrap,2024-12-12,6000,6000,210,0.035,CONDITIONAL,EQ-189,Night,77,Paper Quality,Active,INSPECT
+MFG-2024-090,Noemi,Lucchesi,Southridge Video,noemi.lucchesi@southridgevideo.com,Manufacturing,Video Film,2024-12-13,1400,1400,14,0.010,PASS,EQ-190,Day,92,None,Active,APPROVE
+MFG-2024-091,Hannah,Haynes,Lakeshore Retail,hannah.haynes@lakeshore-retail.com,Assembly,Retail Display,2024-12-14,900,900,18,0.020,PASS,EQ-191,Evening,89,None,Active,APPROVE
+MFG-2024-092,Amey,Wadkar,Munson's Pickles and Preserves Farm,amey.wadkar@munsonspicklesandpreservesfarm.com,Electronics,Preserve Monitor,2024-12-15,450,450,9,0.020,PASS,EQ-192,Day,88,None,Active,APPROVE
+MFG-2024-093,Jameela,Asghar,Margie's Travel,jameela.asghar@margiestravel.com,Packaging,Travel Kit Box,2024-12-16,3000,3000,105,0.035,CONDITIONAL,EQ-193,Night,77,Foam Insert,Active,INSPECT
+MFG-2024-094,Jeanette,Kjær,The Phone Company,jeanette.kjaer@thephone-company.com,Manufacturing,Phone Component,2024-12-17,1300,1300,13,0.010,PASS,EQ-194,Day,92,None,Active,APPROVE
+MFG-2024-095,Shoira,Nazarova,Tailspin Toys,shoira.nazarova@tailspintoys.com,Assembly,Toy Joint,2024-12-18,2000,2000,40,0.020,PASS,EQ-195,Evening,89,None,Active,APPROVE
+MFG-2024-096,Malik,Haddad,Wingtip Toys,malik.haddad@wingtiptoys.com,Electronics,Toy Circuit,2024-12-19,1500,1500,30,0.020,PASS,EQ-196,Day,88,None,Active,APPROVE
+MFG-2024-097,Jan,Macek,Humongous Insurance,jan.macek@humongousinsurance.com,Packaging,Insurance Packet,2024-12-20,4000,4000,140,0.035,CONDITIONAL,EQ-197,Night,77,Seal Quality,Active,INSPECT
+MFG-2024-098,Gunnveig,Bakke,First Up Consultants,gunnveig.bakke@firstupconsultants.com,Manufacturing,Consulting Kit,2024-12-21,1700,1700,17,0.010,PASS,EQ-198,Day,92,None,Active,APPROVE
+MFG-2024-099,Habtu,Michael,Graphic Design Institute,habtu.michael@graphicdesigninstitute.com,Assembly,Design Element,2024-12-22,800,800,16,0.020,PASS,EQ-199,Evening,89,None,Active,APPROVE
+MFG-2024-100,Olivia,Wilson,Boulder Innovations,olivia.wilson2@boulder-innovations.com,Electronics,Innovation Circuit,2024-12-23,600,600,12,0.020,PASS,EQ-200,Day,88,None,Active,APPROVE

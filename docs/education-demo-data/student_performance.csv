@@ -1,0 +1,101 @@
+StudentID,FirstName,LastName,Organization,Email,DateOfEnrollment,MajorProgram,GPA,CurrentTermGPA,TestScore,AttendanceRate,CoursesTaken,CoursesCompleted,CoursesInProgress,AtRiskFlag,AcademicStanding,Intervention
+EDU-2024-001,Lara,Wolfe,Bellows College,lara.wolfe@bellowscollege.com,2023-09-01,Computer Science,3.85,3.92,94,0.98,28,24,4,No,Good Standing,None
+EDU-2024-002,Sang,Trinh,Bellows College,sang.trinh@bellowscollege.com,2023-09-01,Business Administration,2.65,2.45,68,0.72,24,20,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-003,Obinna,Ekechukwu,Bellows College,obinna.ekechukwu@bellowscollege.com,2023-09-01,Engineering,2.25,1.95,52,0.45,20,16,4,Yes,Academic Warning,Mandatory Advising
+EDU-2024-004,Miyu,Hashimoto,Bellows College,miyu.hashimoto@bellowscollege.com,2023-09-01,Business Administration,3.45,3.65,87,0.95,28,24,4,No,Good Standing,None
+EDU-2024-005,Valentina,Huaman,Bellows College,valentina.huaman@bellowscollege.com,2023-09-01,Psychology,3.72,3.88,91,0.96,26,22,4,No,Good Standing,None
+EDU-2024-006,Amin,Alimov,Bellows College,amin.alimov@bellowscollege.com,2023-09-01,Mathematics,2.55,2.35,62,0.68,22,18,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-007,Daniela,Petkovska,Bellows College,daniela.petkovska@bellowscollege.com,2023-09-01,Literature,3.92,3.98,96,0.99,30,28,2,No,Good Standing,None
+EDU-2024-008,Pedro,Sapón,Bellows College,pedro.sapon@bellowscollege.com,2023-09-01,Biology,2.18,1.88,48,0.42,18,14,4,Yes,Academic Warning,Mandatory Advising
+EDU-2024-009,Gilbert,Bonsaint,Bellows College,gilbert.bonsaint@bellowscollege.com,2023-09-01,History,3.68,3.75,89,0.94,27,23,4,No,Good Standing,None
+EDU-2024-010,Hasna,Munira,Bellows College,hasna.munira@bellowscollege.com,2023-09-01,Engineering,3.28,3.45,82,0.91,25,21,4,No,Good Standing,None
+EDU-2024-011,Olivia,Wilson,Bellows College,olivia.wilson@bellowscollege.com,2023-09-01,Computer Science,3.78,3.85,93,0.97,28,24,4,No,Good Standing,None
+EDU-2024-012,Stevan,Danicic,Bellows College,stevan.danicic@bellowscollege.com,2023-09-01,Physics,2.35,2.12,58,0.55,20,16,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-013,Airi,Ilves,Bellows College,airi.ilves@bellowscollege.com,2023-09-01,Chemistry,3.55,3.62,86,0.93,26,22,4,No,Good Standing,None
+EDU-2024-014,Tarja,Hyypiä,Bellows College,tarja.hyyppia@bellowscollege.com,2023-09-01,Business Administration,3.82,3.91,95,0.98,29,26,3,No,Good Standing,None
+EDU-2024-015,Izabella,Gyenes,Bellows College,izabella.gyenes@bellowscollege.com,2023-09-01,Economics,3.65,3.72,88,0.92,26,22,4,No,Good Standing,None
+EDU-2024-016,Shokat,Younas,Bellows College,shokat.younas@bellowscollege.com,2023-09-01,Statistics,2.78,2.68,71,0.75,23,19,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-017,Kinan,Kaunang,Bellows College,kinan.kaunang@bellowscollege.com,2023-09-01,Philosophy,3.48,3.55,85,0.90,25,21,4,No,Good Standing,None
+EDU-2024-018,Håvard,Simonsen,Bellows College,havard.simonsen@bellowscollege.com,2023-09-01,Engineering,3.35,3.48,84,0.89,25,21,4,No,Good Standing,None
+EDU-2024-019,Zoe,Anagnostou,Bellows College,zoe.anagnostou@bellowscollege.com,2023-09-01,Literature,3.88,3.95,94,0.97,28,24,4,No,Good Standing,None
+EDU-2024-020,Geeta,Bayan,Bellows College,geeta.bayan@bellowscollege.com,2023-09-01,Biology,2.42,2.22,61,0.62,21,17,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-021,Pankaj,Moharana,Bellows College,pankaj.moharana@bellowscollege.com,2023-09-01,Computer Science,2.08,1.82,45,0.38,16,12,4,Yes,Academic Warning,Mandatory Advising
+EDU-2024-022,Iñaki,Elizagutia,Bellows College,inaki.elizagutia@bellowscollege.com,2023-09-01,Mathematics,3.95,3.98,97,0.99,30,28,2,No,Good Standing,None
+EDU-2024-023,Joni,Shah,Bellows College,joni.shah@bellowscollege.com,2023-09-01,Physics,3.72,3.82,92,0.96,27,23,4,No,Good Standing,None
+EDU-2024-024,Semira,Girma,Bellows College,semira.girma@bellowscollege.com,2023-09-01,Chemistry,3.38,3.52,83,0.88,24,20,4,No,Good Standing,None
+EDU-2024-025,Ausra,Gudaitiene,Bellows College,ausra.gudaitiene@bellowscollege.com,2023-09-01,Engineering,2.62,2.48,67,0.70,22,18,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-026,Yusuf,Osman,Bellows College,yusuf.osman@bellowscollege.com,2023-09-01,Business Administration,3.52,3.68,87,0.93,26,22,4,No,Good Standing,None
+EDU-2024-027,Antón,Caneiro,Bellows College,anton.caneiro@bellowscollege.com,2023-09-01,History,3.75,3.85,91,0.95,27,23,4,No,Good Standing,None
+EDU-2024-028,Taji,Baraka,Bellows College,taji.baraka@bellowscollege.com,2023-09-01,Psychology,3.48,3.58,84,0.89,25,21,4,No,Good Standing,None
+EDU-2024-029,Teresa,Andrade,Bellows College,teresa.andrade@bellowscollege.com,2023-09-01,Literature,2.85,2.75,74,0.78,23,19,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-030,Nabanita,Bandopadhyay,Bellows College,nabanita.bandopadhyay@bellowscollege.com,2023-09-01,Economics,3.82,3.88,93,0.96,28,24,4,No,Good Standing,None
+EDU-2024-031,Sanja,Jankovic,Bellows College,sanja.jankovic@bellowscollege.com,2023-09-01,Computer Science,3.65,3.72,88,0.92,26,22,4,No,Good Standing,None
+EDU-2024-032,Marie,Methot,Bellows College,marie.methot@bellowscollege.com,2023-09-01,Statistics,2.48,2.32,65,0.68,21,17,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-033,Suresh,Hanafi,Bellows College,suresh.hanafi@bellowscollege.com,2023-09-01,Biology,3.55,3.65,86,0.91,25,21,4,No,Good Standing,None
+EDU-2024-034,Gurpreet,Bawa,Bellows College,gurpreet.bawa@bellowscollege.com,2023-09-01,Engineering,3.78,3.88,92,0.95,27,23,4,No,Good Standing,None
+EDU-2024-035,Zola,Sodlaka,Bellows College,zola.sodlaka@bellowscollege.com,2023-09-01,Mathematics,2.72,2.62,70,0.73,22,18,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-036,Ruben,Ghukasyan,Bellows College,ruben.ghukasyan@bellowscollege.com,2023-09-01,Philosophy,3.88,3.95,94,0.97,28,24,4,No,Good Standing,None
+EDU-2024-037,Ozgur,Tekin,Bellows College,ozgur.tekin@bellowscollege.com,2023-09-01,Physics,2.95,2.85,76,0.80,24,20,4,No,Good Standing,Academic Support
+EDU-2024-038,Meret,Caryyew,Bellows College,meret.caryyew@bellowscollege.com,2023-09-01,Business Administration,3.68,3.78,90,0.94,27,23,4,No,Good Standing,None
+EDU-2024-039,Adam,Jelinek,Bellows College,adam.jelinek@bellowscollege.com,2023-09-01,Computer Science,3.42,3.58,85,0.90,25,21,4,No,Good Standing,None
+EDU-2024-040,Christian,Forsberg,Bellows College,christian.forsberg@bellowscollege.com,2023-09-01,History,2.38,2.18,59,0.58,20,16,4,Yes,Academic Probation,Mandatory Advising
+EDU-2024-041,Riley,Johnson,Bellows College,riley.johnson@bellowscollege.com,2023-09-01,Psychology,3.72,3.82,91,0.95,27,23,4,No,Good Standing,None
+EDU-2024-042,Lorato,Bogosi,Bellows College,lorato.bogosi@bellowscollege.com,2023-09-01,Economics,3.58,3.68,87,0.92,26,22,4,No,Good Standing,None
+EDU-2024-043,Hye-Ri,Jung,Bellows College,hye-ri.jung@bellowscollege.com,2023-09-01,Chemistry,2.52,2.38,64,0.66,21,17,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-044,Mikola,Liashchanka,Bellows College,mikola.liashchanka@bellowscollege.com,2023-09-01,Engineering,3.75,3.85,91,0.94,27,23,4,No,Good Standing,None
+EDU-2024-045,Rajesh,Santoshi,Bellows College,rajesh.santoshi@bellowscollege.com,2023-09-01,Statistics,2.68,2.55,69,0.72,22,18,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-046,Bohdan,Koziar,Bellows College,bohdan.koziar@bellowscollege.com,2023-09-01,Mathematics,3.88,3.95,94,0.97,28,24,4,No,Good Standing,None
+EDU-2024-047,Toomas,Sild,Bellows College,toomas.sild@bellowscollege.com,2023-09-01,Literature,3.62,3.72,88,0.93,26,22,4,No,Good Standing,None
+EDU-2024-048,Stefan,Beno,Bellows College,stefan.beno@bellowscollege.com,2023-09-01,Biology,3.28,3.42,83,0.88,25,21,4,No,Good Standing,None
+EDU-2024-049,Momchil,Nikolov,Bellows College,momchil.nikolov@bellowscollege.com,2023-09-01,Computer Science,2.15,1.92,49,0.41,17,13,4,Yes,Academic Warning,Mandatory Advising
+EDU-2024-050,Gulnoza,Anvarova,Bellows College,gulnoza.anvarova@bellowscollege.com,2023-09-01,Physics,3.82,3.90,93,0.96,28,24,4,No,Good Standing,None
+EDU-2024-051,Bahar,Kazemi,Bellows College,bahar.kazemi@bellowscollege.com,2023-09-01,Psychology,3.45,3.55,84,0.89,25,21,4,No,Good Standing,None
+EDU-2024-052,Kris,Lepmets,Bellows College,kris.lepmets@bellowscollege.com,2023-09-01,Economics,2.75,2.65,72,0.76,23,19,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-053,Ngoc,Thach,Bellows College,ngoc.thach@bellowscollege.com,2023-09-01,Chemistry,3.68,3.78,90,0.94,27,23,4,No,Good Standing,None
+EDU-2024-054,Luka,Zupan,Bellows College,luka.zupan@bellowscollege.com,2023-09-01,Engineering,3.52,3.65,86,0.91,26,22,4,No,Good Standing,None
+EDU-2024-055,Nicolás,Ponce,Bellows College,nicolas.ponce@bellowscollege.com,2023-09-01,History,2.58,2.45,66,0.69,21,17,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-056,Upul,Amarasiri,Bellows College,upul.amarasiri@bellowscollege.com,2023-09-01,Mathematics,3.78,3.88,92,0.95,27,23,4,No,Good Standing,None
+EDU-2024-057,Adriana,Mota,Bellows College,adriana.mota@bellowscollege.com,2023-09-01,Philosophy,3.85,3.92,94,0.96,28,24,4,No,Good Standing,None
+EDU-2024-058,Tania,De Sousa,Bellows College,tania.de-sousa@bellowscollege.com,2023-09-01,Business Administration,2.82,2.72,73,0.77,23,19,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-059,Abdulla,Isroilov,Bellows College,abdulla.isroilov@bellowscollege.com,2023-09-01,Computer Science,3.65,3.75,89,0.93,27,23,4,No,Good Standing,None
+EDU-2024-060,Leyla,Mammadova,Bellows College,leyla.mammadova@bellowscollege.com,2023-09-01,Biology,3.35,3.48,84,0.89,25,21,4,No,Good Standing,None
+EDU-2024-061,Fahd,Al-Otaibi,Bellows College,fahd.al-otaibi@bellowscollege.com,2023-09-01,Physics,2.45,2.28,63,0.65,21,17,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-062,Miles,Abolrous,Bellows College,miles.abolrous@bellowscollege.com,2023-09-01,Statistics,3.92,3.98,96,0.99,30,28,2,No,Good Standing,None
+EDU-2024-063,Jan,Kozlowski,Bellows College,jan.kozlowski@bellowscollege.com,2023-09-01,Engineering,3.58,3.68,87,0.92,26,22,4,No,Good Standing,None
+EDU-2024-064,Natasa,Lekovic,Bellows College,natasa.lekovic@bellowscollege.com,2023-09-01,Literature,2.68,2.55,70,0.73,22,18,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-065,Dragan,Lazarevski,Bellows College,dragan.lazarevski@bellowscollege.com,2023-09-01,Economics,3.72,3.82,91,0.95,27,23,4,No,Good Standing,None
+EDU-2024-066,Elira,Kodra,Bellows College,elira.kodra@bellowscollege.com,2023-09-01,Psychology,3.48,3.58,85,0.90,25,21,4,No,Good Standing,None
+EDU-2024-067,Iustin,Munteanu,Bellows College,iustin.munteanu@bellowscollege.com,2023-09-01,Mathematics,2.35,2.15,57,0.54,20,16,4,Yes,Academic Probation,Mandatory Advising
+EDU-2024-068,Sanela,Ivanovic,Bellows College,sanela.ivanovic@bellowscollege.com,2023-09-01,Chemistry,3.65,3.72,88,0.92,26,22,4,No,Good Standing,None
+EDU-2024-069,Tim,Nyström,Bellows College,tim.nystrom@bellowscollege.com,2023-09-01,Computer Science,3.82,3.90,93,0.96,28,24,4,No,Good Standing,None
+EDU-2024-070,Farzan,Ansari,Bellows College,farzan.ansari@bellowscollege.com,2023-09-01,History,2.72,2.62,71,0.74,22,18,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-071,Yuina,Wada,Bellows College,yuina.wada@bellowscollege.com,2023-09-01,Biology,3.58,3.68,87,0.92,26,22,4,No,Good Standing,None
+EDU-2024-072,Samat,Eralieva,Bellows College,samat.eralieva@bellowscollege.com,2023-09-01,Physics,3.42,3.55,85,0.90,25,21,4,No,Good Standing,None
+EDU-2024-073,Noel,Gatdula,Bellows College,noel.gatdula@bellowscollege.com,2023-09-01,Philosophy,2.55,2.42,65,0.67,21,17,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-074,Fernanda,Sarmento,Bellows College,fernanda.sarmento@bellowscollege.com,2023-09-01,Economics,3.88,3.95,94,0.97,28,24,4,No,Good Standing,None
+EDU-2024-075,Ilene,Vanderstar,Bellows College,ilene.vanderstar@bellowscollege.com,2023-09-01,Business Administration,3.65,3.75,89,0.93,27,23,4,No,Good Standing,None
+EDU-2024-076,Bhumika,Chattopadhyay,Bellows College,bhumika.chattopadhyay@bellowscollege.com,2023-09-01,Statistics,2.78,2.68,73,0.76,23,19,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-077,Ellis,Carmichael,Bellows College,ellis.carmichael@bellowscollege.com,2023-09-01,Mathematics,3.75,3.85,91,0.94,27,23,4,No,Good Standing,None
+EDU-2024-078,Petra,Pavlic,Bellows College,petra.pavlic@bellowscollege.com,2023-09-01,Literature,3.52,3.62,86,0.91,26,22,4,No,Good Standing,None
+EDU-2024-079,Séamus,Mac Domhnaill,Bellows College,seamus.mac-domhnaill@bellowscollege.com,2023-09-01,Engineering,2.62,2.48,68,0.70,22,18,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-080,Zoran,Jokic,Bellows College,zoran.jokic@bellowscollege.com,2023-09-01,Chemistry,3.68,3.78,90,0.94,27,23,4,No,Good Standing,None
+EDU-2024-081,Jukka-Pekka,Enestam,Bellows College,jukka-pekka.enestam@bellowscollege.com,2023-09-01,Computer Science,3.88,3.95,94,0.97,28,24,4,No,Good Standing,None
+EDU-2024-082,Srood,Sirwan,Bellows College,srood.sirwan@bellowscollege.com,2023-09-01,History,2.48,2.35,62,0.63,21,17,4,Yes,Academic Probation,Mandatory Advising
+EDU-2024-083,Federico,Tercedor,Bellows College,federico.tercedor@bellowscollege.com,2023-09-01,Psychology,3.72,3.82,91,0.95,27,23,4,No,Good Standing,None
+EDU-2024-084,Borys,Drubych,Bellows College,borys.drubych@bellowscollege.com,2023-09-01,Biology,3.28,3.42,83,0.88,25,21,4,No,Good Standing,None
+EDU-2024-085,Abdukerim,Ibrahim,Bellows College,abdukerim.ibrahim@bellowscollege.com,2023-09-01,Economics,2.85,2.75,75,0.79,23,19,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-086,Navneet,Sandhu,Bellows College,navneet.sandhu@bellowscollege.com,2023-09-01,Physics,3.82,3.90,93,0.96,28,24,4,No,Good Standing,None
+EDU-2024-087,Arnoud,Wolthuis,Bellows College,arnoud.wolthuis@bellowscollege.com,2023-09-01,Mathematics,3.45,3.55,84,0.89,25,21,4,No,Good Standing,None
+EDU-2024-088,Kai,Carter,Bellows College,kai.carter@bellowscollege.com,2023-09-01,Philosophy,2.68,2.55,71,0.74,22,18,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-089,Slavko,Mladjen,Bellows College,slavko.mladjen@bellowscollege.com,2023-09-01,Chemistry,3.65,3.72,88,0.92,26,22,4,No,Good Standing,None
+EDU-2024-090,Noemi,Lucchesi,Bellows College,noemi.lucchesi@bellowscollege.com,2023-09-01,Business Administration,3.78,3.88,92,0.95,27,23,4,No,Good Standing,None
+EDU-2024-091,Hannah,Haynes,Bellows College,hannah.haynes@bellowscollege.com,2023-09-01,Literature,2.52,2.38,64,0.66,21,17,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-092,Amey,Wadkar,Bellows College,amey.wadkar@bellowscollege.com,2023-09-01,Computer Science,3.88,3.95,94,0.97,28,24,4,No,Good Standing,None
+EDU-2024-093,Jameela,Asghar,Bellows College,jameela.asghar@bellowscollege.com,2023-09-01,Engineering,3.42,3.58,85,0.90,25,21,4,No,Good Standing,None
+EDU-2024-094,Jeanette,Kjær,Bellows College,jeanette.kjaer@bellowscollege.com,2023-09-01,Statistics,2.75,2.65,72,0.76,23,19,4,Yes,Academic Probation,Tutoring Required
+EDU-2024-095,Shoira,Nazarova,Bellows College,shoira.nazarova@bellowscollege.com,2023-09-01,History,3.68,3.78,90,0.94,27,23,4,No,Good Standing,None
+EDU-2024-096,Malik,Haddad,Bellows College,malik.haddad@bellowscollege.com,2023-09-01,Psychology,3.55,3.65,86,0.91,26,22,4,No,Good Standing,None
+EDU-2024-097,Jan,Macek,Bellows College,jan.macek@bellowscollege.com,2023-09-01,Economics,2.38,2.22,59,0.60,20,16,4,Yes,Academic Warning,Mandatory Advising
+EDU-2024-098,Gunnveig,Bakke,Bellows College,gunnveig.bakke@bellowscollege.com,2023-09-01,Mathematics,3.92,3.98,96,0.99,30,28,2,No,Good Standing,None
+EDU-2024-099,Habtu,Michael,Bellows College,habtu.michael@bellowscollege.com,2023-09-01,Biology,3.58,3.68,87,0.92,26,22,4,No,Good Standing,None
+EDU-2024-100,Olivia,Wilson,Bellows College,olivia.wilson2@bellowscollege.com,2023-09-01,Computer Science,2.45,2.28,60,0.58,20,16,4,Yes,Academic Probation,Mandatory Advising

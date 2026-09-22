@@ -273,6 +273,48 @@
     .checklist { margin: 24px 0 0; padding: 0; list-style: none; }
     .checklist li { margin-top: 10px; padding-left: 24px; position: relative; }
     .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--cp-success); font-weight: 700; }
+    .industry-selector-wrap {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+    .industry-select-box {
+      flex: 0 0 280px;
+    }
+    .industry-select-box label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--cp-text);
+    }
+    .industry-select-box select {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      border: 1px solid var(--cp-border);
+      border-radius: 0.625rem;
+      background: var(--cp-surface);
+      color: var(--cp-text);
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .industry-select-box select:hover {
+      border-color: var(--cp-border-strong);
+    }
+    .industry-select-box select:focus {
+      outline: none;
+      border-color: var(--cp-accent);
+      box-shadow: 0 0 0 3px var(--cp-accent-soft);
+    }
+    .industry-content {
+      display: none;
+    }
+    .industry-content.active {
+      display: block;
+    }
     footer { padding: 36px 0; border-top: 1px solid var(--cp-border); }
     .footer-inner { display: flex; justify-content: space-between; gap: 24px; color: var(--cp-text-muted); font-size: 0.9rem; }
     @media (max-width: 760px) {
@@ -424,22 +466,148 @@ Report the release used, installed skill names, versions, and actual locations. 
       <div class="container">
         <div class="section-heading">
           <h2>Demo prompt</h2>
-          <p>A ready-to-use scenario for creating a bakery sales analysis demonstration based on Module 6 of the MS-4018 course.</p>
+          <p>Select your industry to see a ready-to-use demonstration scenario. Paste the prompt into the demo-builder skill to generate your assets.</p>
         </div>
-        <article class="install-panel">
+        
+        <div class="industry-selector-wrap">
+          <div class="industry-select-box">
+            <label for="industry-dropdown">Choose industry:</label>
+            <select id="industry-dropdown">
+              <option value="retail">Retail & Sales</option>
+              <option value="finance">Finance & Banking</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="manufacturing">Manufacturing</option>
+              <option value="education">Education</option>
+              <option value="technology">Technology</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Retail & Sales -->
+        <div class="industry-content active" data-industry="retail">
+          <article class="install-panel">
           <h3>Bakery sales analysis</h3>
           <p>Paste this prompt into the demo-builder skill to generate the demonstration assets.</p>
           <div class="prompt-wrap">
             <button class="copy-button" type="button" data-copy="bakery-demo-prompt" aria-label="Copy bakery sales analysis demonstration prompt">Copy</button>
             <pre id="bakery-demo-prompt">This demo will be based on the customization and curation of the MS-4018 course, specifically Module 6, “Excel: Uncover New Data Insights with AI.”
 
-The customer for whom the session will be delivered operates in the food industry, specifically in the bakery sector. The demonstration should be based on the task of an administrative employee who needs to analyze data from a spreadsheet containing multiple products, categories, quantities produced, quantities sold, and unit prices from the past six months.
+The customer for whom the session will be delivered operates in the food industry, specifically in the bakery sector. The demonstration should be based on the task of an administrative employee who needs to analyze sales data from a spreadsheet containing multiple products, categories, quantities produced, quantities sold, unit prices, costs, and profit margins from the past six months.
 
-Using Copilot prompts, the employee should generate sales performance analyses and charts.
+Sample bakery sales data is available at: /retail-demo-data/bakery_sales.csv
+Download and open this CSV file in Excel to access 100 sample bakery products with sales performance data, cost analysis, and seasonal trends.
 
-I need a Word document containing the step-by-step demonstration instructions, as well as the Excel file that will be used during the demonstration.</pre>
+Using Copilot in Excel, the employee should generate sales performance analyses, identify top-performing products, calculate profitability insights, and create visual charts.
+
+Create a Word document containing the step-by-step demonstration instructions and reference the Excel sample data for live analysis during the presentation.</pre>
           </div>
         </article>
+        </div>
+
+        <!-- Finance & Banking -->
+        <div class="industry-content" data-industry="finance">
+          <article class="install-panel">
+            <h3>Credit portfolio analysis</h3>
+            <p>Paste this prompt into the demo-builder skill to generate the demonstration assets.</p>
+            <div class="prompt-wrap">
+              <button class="copy-button" type="button" data-copy="finance-demo-prompt" aria-label="Copy finance demonstration prompt">Copy</button>
+              <pre id="finance-demo-prompt">This demo will showcase Microsoft 365 Copilot for financial analysis based on Module 6 of the MS-4018 course.
+
+The demonstration targets a credit analyst at Woodgrove Bank who needs to evaluate a portfolio of loan applications. The analyst must review financial statements, credit scores, employment history, and debt-to-income ratios for multiple applicants.
+
+Sample loan application data is available at: /finance-demo-data/loan_applications.csv
+Download and open this CSV file in Excel to access 100 sample loan records with risk assessments.
+
+Using Copilot in Excel, the analyst will generate risk assessments, create comparison matrices, and produce a summary report recommending approval or denial for each application.
+
+Create a Word document with step-by-step demonstration instructions and reference the Excel sample data for live analysis during the presentation.</pre>
+            </div>
+          </article>
+        </div>
+
+        <!-- Healthcare -->
+        <div class="industry-content" data-industry="healthcare">
+          <article class="install-panel">
+            <h3>Patient data summary analysis</h3>
+            <p>Paste this prompt into the demo-builder skill to generate the demonstration assets.</p>
+            <div class="prompt-wrap">
+              <button class="copy-button" type="button" data-copy="healthcare-demo-prompt" aria-label="Copy healthcare demonstration prompt">Copy</button>
+              <pre id="healthcare-demo-prompt">This demo showcases Copilot for healthcare administration using Module 6 of the MS-4018 course concepts.
+
+The scenario features a clinic administrator managing patient records across multiple healthcare organizations. The administrator needs to analyze patient data including demographics, visit history, common diagnoses, insurance status, and referral patterns.
+
+Sample patient data is available at: /healthcare-demo-data/patients.csv
+Download and open this CSV file in Excel to access 100 sample patient records with visit details and clinical information.
+
+Using Copilot in Excel, the administrator will summarize patient populations, identify trends, create reports for clinic leadership, and generate communication templates for patient outreach and care coordination.
+
+Create a Word document with step-by-step demonstration instructions and reference the Excel sample data for analysis during the presentation.</pre>
+            </div>
+          </article>
+        </div>
+
+        <!-- Manufacturing -->
+        <div class="industry-content" data-industry="manufacturing">
+          <article class="install-panel">
+            <h3>Production quality analysis</h3>
+            <p>Paste this prompt into the demo-builder skill to generate the demonstration assets.</p>
+            <div class="prompt-wrap">
+              <button class="copy-button" type="button" data-copy="manufacturing-demo-prompt" aria-label="Copy manufacturing demonstration prompt">Copy</button>
+              <pre id="manufacturing-demo-prompt">This demo illustrates Copilot for manufacturing quality control using Module 6 of the MS-4018 course.
+
+The scenario involves a quality assurance manager monitoring production data including defect rates, batch details, inspection results, and equipment performance metrics across multiple product lines and production shifts.
+
+Sample production quality data is available at: /manufacturing-demo-data/production_quality.csv
+Download and open this CSV file in Excel to access 100 sample production records with quality scores, defect analysis, and inspection results.
+
+Using Copilot in Excel, the manager will analyze quality trends, identify root causes of defects, generate quality control reports, and create recommendations for process improvements across product lines and equipment.
+
+Create a Word document with step-by-step demonstration instructions and reference the Excel sample data for analysis during the presentation.</pre>
+            </div>
+          </article>
+        </div>
+
+        <!-- Education -->
+        <div class="industry-content" data-industry="education">
+          <article class="install-panel">
+            <h3>Student performance analysis</h3>
+            <p>Paste this prompt into the demo-builder skill to generate the demonstration assets.</p>
+            <div class="prompt-wrap">
+              <button class="copy-button" type="button" data-copy="education-demo-prompt" aria-label="Copy education demonstration prompt">Copy</button>
+              <pre id="education-demo-prompt">This demo demonstrates Copilot for academic administration based on Module 6 of the MS-4018 course.
+
+The scenario features an academic advisor at Bellows College analyzing student performance data including grades, attendance, test scores, major requirements, GPA, and progress toward degree completion across multiple student cohorts.
+
+Sample student performance data is available at: /education-demo-data/student_performance.csv
+Download and open this CSV file in Excel to access 100 sample student records with academic standing, at-risk indicators, and intervention recommendations.
+
+Using Copilot in Excel, the advisor will summarize student performance trends, identify at-risk students, generate progress reports, and create personalized intervention recommendations for academic support.
+
+Create a Word document with step-by-step demonstration instructions and reference the Excel sample data for analysis during the presentation.</pre>
+            </div>
+          </article>
+        </div>
+
+        <!-- Technology -->
+        <div class="industry-content" data-industry="technology">
+          <article class="install-panel">
+            <h3>Project backlog analysis</h3>
+            <p>Paste this prompt into the demo-builder skill to generate the demonstration assets.</p>
+            <div class="prompt-wrap">
+              <button class="copy-button" type="button" data-copy="technology-demo-prompt" aria-label="Copy technology demonstration prompt">Copy</button>
+              <pre id="technology-demo-prompt">This demo showcases Copilot for software project management using Module 6 of the MS-4018 course.
+
+The scenario involves a project manager overseeing a software development team tracking work items, bug reports, feature requests, sprint progress, and resource allocation across multiple technology projects.
+
+Sample project work item data is available at: /technology-demo-data/project_work_items.csv
+Download and open this CSV file in Excel to access 100 sample work items with project status, priority levels, blocker analysis, and resource allocation details.
+
+Using Copilot in Excel, the manager will analyze project health, prioritize work items, identify bottlenecks and blockers, generate sprint planning documents, and create status reports for stakeholders.
+
+Create a Word document with step-by-step demonstration instructions and reference the Excel sample data for analysis during the presentation.</pre>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -504,9 +672,73 @@ I need a Word document containing the step-by-step demonstration instructions, a
   </footer>
 
   <script>
+    // Generate dynamic CSV file URLs based on current site location
+    const csvDataMap = {
+      'bakery-demo-prompt': '/retail-demo-data/bakery_sales.csv',
+      'finance-demo-prompt': '/finance-demo-data/loan_applications.csv',
+      'healthcare-demo-prompt': '/healthcare-demo-data/patients.csv',
+      'manufacturing-demo-prompt': '/manufacturing-demo-data/production_quality.csv',
+      'education-demo-prompt': '/education-demo-data/student_performance.csv',
+      'technology-demo-prompt': '/technology-demo-data/project_work_items.csv'
+    };
+
+    function getFullCsvUrl(relativePath) {
+      // If running on a local file:// protocol, return relative path
+      if (window.location.protocol === 'file:') {
+        return relativePath;
+      }
+      // If running on http/https, construct full URL
+      const pathname = window.location.pathname;
+      const lastSlashIndex = pathname.lastIndexOf('/');
+      // Include the slash in directory
+      const directory = pathname.substring(0, lastSlashIndex + 1);
+      const baseUrl = window.location.origin + directory;
+      // Strip leading slash from relative path to avoid double slash
+      const cleanPath = relativePath.startsWith('/') ? relativePath.substring(1) : relativePath;
+      return baseUrl + cleanPath;
+    }
+
+    function replacePromptCsvReferences() {
+      Object.entries(csvDataMap).forEach(([promptId, relativePath]) => {
+        const promptElement = document.getElementById(promptId);
+        if (promptElement) {
+          const fullUrl = getFullCsvUrl(relativePath);
+          // Replace relative path with full URL in the prompt text
+          promptElement.textContent = promptElement.textContent.replace(
+            relativePath,
+            fullUrl
+          );
+        }
+      });
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', replacePromptCsvReferences);
+    // Also run immediately in case DOM is already loaded
+    replacePromptCsvReferences();
+
+    // Handle industry dropdown
+    const industryDropdown = document.getElementById('industry-dropdown');
+    const industryContents = document.querySelectorAll('.industry-content');
+    
+    if (industryDropdown) {
+      industryDropdown.addEventListener('change', (e) => {
+        const selectedIndustry = e.target.value;
+        industryContents.forEach(content => {
+          if (content.dataset.industry === selectedIndustry) {
+            content.classList.add('active');
+          } else {
+            content.classList.remove('active');
+          }
+        });
+      });
+    }
+    
+    // Handle copy buttons with dynamic CSV URLs
     document.querySelectorAll("[data-copy]").forEach((button) => {
       button.addEventListener("click", async () => {
-        const prompt = document.getElementById(button.dataset.copy).textContent;
+        const promptId = button.dataset.copy;
+        const prompt = document.getElementById(promptId).textContent;
         try {
           await navigator.clipboard.writeText(prompt);
           button.textContent = "Copied";
