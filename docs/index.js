@@ -110,10 +110,13 @@ function replacePromptCsvReferences() {
     const promptElement = document.getElementById(promptId);
     if (promptElement) {
       const fullUrl = csvFullUrls[promptId];
-      promptElement.textContent = promptElement.textContent.replace(
-        relativePath,
-        fullUrl
-      );
+      let text = promptElement.textContent;
+      
+      // Only replace if the text contains the relative path and not already the full URL
+      if (text.includes(relativePath) && !text.includes(fullUrl)) {
+        text = text.replace(relativePath, fullUrl);
+        promptElement.textContent = text;
+      }
     }
   });
 }
