@@ -143,14 +143,17 @@ Report the release used, installed skill names, versions, and actual locations. 
 
     <section class="section-alt" id="demo-prompt">
       <div class="container">
-        <div class="section-heading">
+        <table id="demo-promt">
+          <tr><td rowspan="2">   <div class="section-heading">
           <h2>Demo prompt</h2>
-          <p>Select your industry to see a ready-to-use demonstration scenario. Paste the prompt into the demo-builder skill to generate your assets.</p>
-        </div>
-        
+          
+        </div></td><td>
+<p>Select your industry to see a ready-to-use demonstration scenario. Paste the prompt into the demo-builder skill to generate your assets.</p>
+        </td></tr>
+        <tr><td style="white-space: nowrap;">
         <div class="industry-selector-wrap">
           <div class="industry-select-box">
-            <label for="industry-dropdown">Choose industry:</label>
+           Choose industry:
             <select id="industry-dropdown">
               <option value="retail">Retail & Sales</option>
               <option value="finance">Finance & Banking</option>
@@ -161,6 +164,12 @@ Report the release used, installed skill names, versions, and actual locations. 
             </select>
           </div>
         </div>
+        </td></tr>
+        </table>
+        </table>
+     
+        
+
 
         <!-- Retail & Sales -->
         <div class="industry-content active" data-industry="retail">
